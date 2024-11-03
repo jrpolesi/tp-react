@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { Button, supabase } from "../shared";
 
-export function Home() {
+export function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <div>
       <h1>Home</h1>
@@ -11,7 +14,7 @@ export function Home() {
           supabase.auth.signOut();
         }}
       >
-        Log out
+        {t("home.logout", "Testando")}
       </Button>
     </div>
   );

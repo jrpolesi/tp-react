@@ -1,11 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-  Dashboard,
-  Form,
-  Home,
+  DashboardPage,
+  FormPage,
+  HomePage,
   NotFoundPage,
   PageLayout,
-  Settings,
+  SettingsPage,
   SignInPage,
   SignUpPage,
 } from "../views";
@@ -25,19 +25,19 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Home />,
+            element: <HomePage />,
           },
           {
             path: "/dashboard",
-            element: <Dashboard />,
+            element: <DashboardPage />,
           },
           {
             path: "/settings",
-            element: <Settings />,
+            element: <SettingsPage />,
           },
           {
             path: "form",
-            element: <Form />,
+            element: <FormPage />,
           },
         ],
       },
