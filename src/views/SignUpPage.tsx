@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../shared";
+import { supabase } from "../services";
 
 export function SignUpPage() {
   const [formValues, setFormValues] = useState({

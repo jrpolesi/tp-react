@@ -6,7 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
-import { supabase } from "../services";
+import { supabase } from "../../services";
 import { storage } from "../utils";
 
 type User = {

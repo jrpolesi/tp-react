@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { Button, supabase } from "../shared";
+import { supabase } from "../services";
+import { Button } from "../shared";
 
 export function HomePage() {
   const { t } = useTranslation();
