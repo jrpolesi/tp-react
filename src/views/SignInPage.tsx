@@ -14,6 +14,9 @@ export function SignInPage() {
     });
   };
 
+  // password: 123456
+  // email: amanda-cattelan@tuamaeaquelaursa.com
+
   return (
     <div>
       <h1>Sign In</h1>
@@ -58,5 +61,3 @@ export function SignInPage() {
     </div>
   );
 }
-// 7K@H3R38ngQjxUy
-// amanda-cattelan@tuamaeaquelaursa.com

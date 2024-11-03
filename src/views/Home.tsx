@@ -1,4 +1,4 @@
-import { supabase } from "../shared";
+import { Button, supabase } from "../shared";
 
 export function Home() {
   return (
@@ -6,13 +6,13 @@ export function Home() {
       <h1>Home</h1>
       <p>Welcome to the Home page!</p>
 
-      <button
+      <Button
         onClick={() => {
           supabase.auth.signOut();
         }}
       >
         Log out
-      </button>
+      </Button>
     </div>
   );
 }
