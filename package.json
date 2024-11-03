@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate-locales": "i18next 'src/**/*.{ts,tsx}' --config i18next-parser.config.js"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -17,6 +18,7 @@
     "@supabase/auth-ui-shared": "^0.1.8",
     "@supabase/supabase-js": "^2.46.1",
     "i18next": "^23.16.4",
+    "i18next-parser": "^9.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.1.0",
