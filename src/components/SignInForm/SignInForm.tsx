@@ -25,30 +25,14 @@ export function SignInForm({ onFormSubmit, ...props }: SignInFormProps) {
   const form = useForm<FormFields>({
     defaultValues: { email: "", password: "" },
   });
-  const { control, formState, setError } = form;
+  const { control, formState } = form;
   const { errors, isLoading, isSubmitting } = formState;
 
   async function onSubmit({ email, password }: FormFields) {
-    try {
-      await onFormSubmit({
-        email,
-        password,
-      });
-    } catch (error) {
-      let message = t(
-        "signInForm.submit.errors.unknown",
-        "Some unexpected error occurred"
-      );
-
-      if (error instanceof ApiError) {
-        message = t("signInForm.submit.errors.api", "Wrong email or password");
-      }
-
-      setError("submit", {
-        type: "api",
-        message,
-      });
-    }
+    await onFormSubmit({
+      email,
+      password,
+    });
   }
 
   const handleSubmit = useHandleSubmit(form, onSubmit, (error) => {
@@ -106,6 +90,7 @@ export function SignInForm({ onFormSubmit, ...props }: SignInFormProps) {
 
         <ControlledTextField
           name="password"
+          type="password"
           control={control}
           rules={{
             required: t(
