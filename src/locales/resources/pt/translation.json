@@ -11,17 +11,40 @@
         "days_zero": "zero dias"
       },
       "length": {
-        "label": "Length",
+        "label": "Comprimento",
         "value": "{{length}} cm"
       },
       "weight": {
-        "label": "Weight",
+        "label": "Peso",
         "value": "{{weight}} kg"
       }
     }
   },
+  "signInForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "E-mail ou senha incorretos"
+      },
+      "label": "Entrar"
+    },
+    "email": {
+      "errors": {
+        "required": "O E-mail é obrigatório",
+        "invalid": "Endereço de e-mail inválido"
+      },
+      "label": "E-mail"
+    },
+    "password": {
+      "errors": {
+        "required": "A Senha é obrigatória",
+        "minLength": "A senha deve ter pelo menos 6 caracteres"
+      },
+      "label": "Senha"
+    }
+  },
   "home": {
-    "error": "An error occurred while trying to log out.",
+    "error": "Ocorreu um erro ao tentar sair.",
     "logout": "Testando"
   }
 }

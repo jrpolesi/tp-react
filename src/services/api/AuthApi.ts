@@ -1,4 +1,5 @@
 import { Session } from "@supabase/supabase-js";
+import { ApiError } from "../../errors";
 import { User } from "../../types";
 import { Client } from "./Api";
 
@@ -20,11 +21,14 @@ export class AuthApi {
   async signIn(user: UserSignIn) {
     const res = await this.client.auth.signInWithPassword(user);
 
+    if (res.error) {
+      throw new ApiError(res.error.message, res.error.status ?? 0, "auth");
+    }
+
     return res;
   }
 
   async signUp(user: UserSignUp) {
-    console.log({ user });
     const res = await this.client.auth.signUp({
       email: user.email,
       password: user.password,
@@ -39,11 +43,19 @@ export class AuthApi {
       },
     });
 
+    if (res.error) {
+      throw new ApiError(res.error.message, res.error.status ?? 0, "auth");
+    }
+
     return res;
   }
 
   async signOut() {
     const res = await this.client.auth.signOut();
+
+    if (res.error) {
+      throw new ApiError(res.error.message, res.error.status ?? 0, "auth");
+    }
 
     return res;
   }

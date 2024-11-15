@@ -1,13 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { Container } from "../components";
 
 export function PageLayout() {
   return (
-    <div>
-      <header>
-        header
-      </header>
-
+    <Container>
       <Outlet />
-    </div>
+    </Container>
   );
 }
