@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { baby } from "../../assets";
 import { calculateAge } from "../../utils";
 import { CardWithIcon } from "../CardWithIcon";
-import { Typography } from "../Typograph";
+import { Typography } from "../Shared";
 
 export type BabyAvatarProps = AvatarProps & {
   name: string;

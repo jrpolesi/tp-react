@@ -1,6 +1,6 @@
 import { Stack } from "@mui/material";
 import { PropsWithChildren } from "react";
-import { Typography } from "./Typograph";
+import { Typography } from "./Shared";
 
 type CardWithIconProps = PropsWithChildren<{
   icon: React.ReactNode;

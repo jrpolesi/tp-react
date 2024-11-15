@@ -4,8 +4,8 @@ import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSessionContext } from "../../contexts";
 import { CardWithIcon } from "../CardWithIcon";
-import { Typography } from "../Typograph";
 import { BabyCardAvatar } from "./BabyAvatar";
+import { Typography } from "../Shared";
 
 export function BabyInfo() {
   const { t } = useTranslation();
