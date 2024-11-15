@@ -45,6 +45,9 @@ export function ControlledTextField<
       error={!!error}
       inputRef={ref}
       {...fieldRest}
+      onChange={(e) => {
+        field.onChange(e.target.value.trimStart());
+      }}
       {...props}
     />
   );

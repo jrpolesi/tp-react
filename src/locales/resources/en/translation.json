@@ -41,6 +41,66 @@
       "label": "Password"
     }
   },
+  "signUpForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form, please check your email"
+      },
+      "label": "Sign Up"
+    },
+    "baby": {
+      "label": "Your baby"
+    },
+    "babyName": {
+      "errors": {
+        "required": "Baby name is required"
+      },
+      "label": "Name"
+    },
+    "babyBirthDate": {
+      "errors": {
+        "required": "Baby birth date is required",
+        "future": "Baby birth date can't be in the future"
+      },
+      "label": "Birth date"
+    },
+    "babyLength": {
+      "errors": {
+        "required": "Baby length is required",
+        "min": "Baby length must be greater than 1",
+        "decimal": "Baby length must be an integer"
+      },
+      "label": "Length"
+    },
+    "babyWeight": {
+      "errors": {
+        "required": "Baby weight is required",
+        "min": "Baby weight must be greater than 1"
+      },
+      "label": "Weight"
+    },
+    "username": {
+      "errors": {
+        "required": "Name is required"
+      },
+      "label": "Your name"
+    },
+    "email": {
+      "errors": {
+        "required": "Email is required",
+        "invalid": "Invalid email address"
+      },
+      "label": "Email"
+    },
+    "password": {
+      "errors": {
+        "required": "Password is required",
+        "minLength": "Password must be at least 6 characters"
+      },
+      "label": "Password"
+    }
+  },
   "home": {
     "error": "An error occurred while trying to log out.",
     "logout": "Testando"
@@ -49,5 +109,10 @@
     "title": "Baby manager",
     "welcome": "Welcome",
     "signUpRedirect": "If you don't have an account, create <linkRedirect>here</linkRedirect>."
+  },
+  "signUn": {
+    "title": "Baby manager",
+    "CreateAccountMessage": "Start managing your baby",
+    "signInRedirect": "If you already have an account, sign in <linkRedirect>here</linkRedirect>."
   }
 }

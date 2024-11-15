@@ -1,3 +1,4 @@
+import "./setup/dayjs.ts";
 import "./setup/i18next.ts";
 
 import { StrictMode } from "react";

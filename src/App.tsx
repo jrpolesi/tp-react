@@ -1,8 +1,6 @@
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { ApiProvider, SessionProvider } from "./contexts";
+import { ApiProvider, LocalizedProvider, SessionProvider } from "./contexts";
 import { Routes } from "./routes";
 
 const theme = createTheme({
@@ -19,10 +17,10 @@ function App() {
     <ApiProvider>
       <SessionProvider>
         <ThemeProvider theme={theme} defaultMode="light">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <LocalizedProvider>
             <CssBaseline enableColorScheme />
             <Routes />
-          </LocalizationProvider>
+          </LocalizedProvider>
         </ThemeProvider>
       </SessionProvider>
     </ApiProvider>

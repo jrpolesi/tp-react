@@ -43,6 +43,66 @@
       "label": "Senha"
     }
   },
+  "signUpForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário, por favor verifique seu e-mail"
+      },
+      "label": "Cadastrar"
+    },
+    "baby": {
+      "label": "Seu bebê"
+    },
+    "babyName": {
+      "errors": {
+        "required": "O nome do bebê é obrigatório"
+      },
+      "label": "Nome"
+    },
+    "babyBirthDate": {
+      "errors": {
+        "required": "A data de nascimento do bebê é obrigatória",
+        "future": "A data de nascimento do bebê não pode estar no futuro"
+      },
+      "label": "Data de nascimento"
+    },
+    "babyLength": {
+      "errors": {
+        "required": "O comprimento do bebê é obrigatório",
+        "min": "O comprimento do bebê deve ser maior que 1",
+        "decimal": "O comprimento do bebê deve ser um número inteiro"
+      },
+      "label": "Comprimento"
+    },
+    "babyWeight": {
+      "errors": {
+        "required": "O peso do bebê é obrigatório",
+        "min": "O peso do bebê deve ser maior que 1"
+      },
+      "label": "Peso"
+    },
+    "username": {
+      "errors": {
+        "required": "O nome é obrigatório"
+      },
+      "label": "Seu nome"
+    },
+    "email": {
+      "errors": {
+        "required": "O E-mail é obrigatório",
+        "invalid": "Endereço de e-mail inválido"
+      },
+      "label": "E-mail"
+    },
+    "password": {
+      "errors": {
+        "required": "A Senha é obrigatória",
+        "minLength": "A senha deve ter pelo menos 6 caracteres"
+      },
+      "label": "Senha"
+    }
+  },
   "home": {
     "error": "Ocorreu um erro ao tentar sair.",
     "logout": "Testando"
@@ -51,5 +111,10 @@
     "title": "Gerenciador de bebês",
     "welcome": "Bem-vindo",
     "signUpRedirect": "Se você não tem uma conta, crie <linkRedirect>aqui</linkRedirect>."
+  },
+  "signUn": {
+    "title": "Gerenciador de bebês",
+    "CreateAccountMessage": "Comece a gerenciar seu bebê",
+    "signInRedirect": "Se você já tem uma conta, entre <linkRedirect>aqui</linkRedirect>."
   }
 }
