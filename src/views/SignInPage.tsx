@@ -1,11 +1,14 @@
 import { useState } from "react";
-import { supabase } from "../services";
+import { Button } from "../components";
+import { useAuthApi } from "../hooks";
 
 export function SignInPage() {
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
   });
+
+  const api = useAuthApi();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValues({
@@ -25,10 +28,7 @@ export function SignInPage() {
         onSubmit={async (e) => {
           e.preventDefault();
 
-          const res = await supabase.auth.signInWithPassword({
-            email: formValues.email,
-            password: formValues.password,
-          });
+          const res = await api.signIn(formValues);
 
           console.log(res);
         }}
@@ -56,7 +56,7 @@ export function SignInPage() {
           />
         </div>
 
-        <button type="submit">Sign In</button>
+        <Button type="submit">Sign In</Button>
       </form>
     </div>
   );

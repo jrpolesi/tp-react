@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { supabase } from "../services";
+import { useAuthApi } from "../hooks";
 
 export function SignUpPage() {
   const [formValues, setFormValues] = useState({
@@ -7,6 +7,8 @@ export function SignUpPage() {
     password: "",
     username: "",
   });
+
+  const api = useAuthApi();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValues({
@@ -23,14 +25,12 @@ export function SignUpPage() {
         onSubmit={async (e) => {
           e.preventDefault();
 
-          const res = await supabase.auth.signUp({
-            email: formValues.email,
-            password: formValues.password,
-            options: {
-              data: {
-                username: formValues.username,
-              },
-            },
+          const res = await api.signUp({
+            ...formValues,
+            babyName: "baby",
+            babyWeight: 3.5,
+            babyLength: 50,
+            babyBirthdate: new Date(),
           });
 
           console.log(res);
