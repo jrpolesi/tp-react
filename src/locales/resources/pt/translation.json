@@ -46,5 +46,10 @@
   "home": {
     "error": "Ocorreu um erro ao tentar sair.",
     "logout": "Testando"
+  },
+  "signIn": {
+    "title": "Gerenciador de bebês",
+    "welcome": "Bem-vindo",
+    "signUpRedirect": "Se você não tem uma conta, crie <linkRedirect>aqui</linkRedirect>."
   }
 }

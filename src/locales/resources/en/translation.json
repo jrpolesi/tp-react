@@ -44,5 +44,10 @@
   "home": {
     "error": "An error occurred while trying to log out.",
     "logout": "Testando"
+  },
+  "signIn": {
+    "title": "Baby manager",
+    "welcome": "Welcome",
+    "signUpRedirect": "If you don't have an account, create <linkRedirect>here</linkRedirect>."
   }
 }

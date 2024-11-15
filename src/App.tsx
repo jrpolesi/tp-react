@@ -8,7 +8,9 @@ import { Routes } from "./routes";
 const theme = createTheme({
   colorSchemes: {
     dark: true,
-    light: true,
+  },
+  palette: {
+    // mode: "dark",
   },
 });
 
