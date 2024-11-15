@@ -6,13 +6,8 @@ import {
   useEffect,
   useState,
 } from "react";
-import { supabase } from "../../services";
-import { storage } from "../utils";
-
-type User = {
-  username: string;
-  email: string;
-};
+import { useAuthApi } from "../hooks";
+import { User } from "../types";
 
 type SessionContext = {
   user: User | null;
@@ -30,27 +25,18 @@ export function SessionProvider({ children }: PropsWithChildren<{}>) {
     session: null,
   });
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      storage.setItem("@baby.token", session?.access_token);
-      setContextValue({
-        user: (session?.user.user_metadata as User) ?? null,
-        session,
-      });
-    });
+  const api = useAuthApi();
 
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      storage.setItem("@baby.token", session?.access_token);
+  useEffect(() => {
+    const subscription = api.subscribeSession((session) => {
       setContextValue({
-        user: (session?.user.user_metadata as User) ?? null,
+        user: session?.user.user_metadata ?? null,
         session,
       });
     });
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [api]);
 
   return (
     <sessionContext.Provider value={contextValue}>
