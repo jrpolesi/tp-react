@@ -1,5 +1,25 @@
 {
+  "babyInfo": {
+    "baby": {
+      "age": {
+        "days_one": "{{days}} day",
+        "days_other": "{{days}} days",
+        "years_one": "{{years}} year and",
+        "years_other": "{{years}} years and",
+        "days_zero": "zero days"
+      },
+      "length": {
+        "label": "Length",
+        "value": "{{length}} cm"
+      },
+      "weight": {
+        "label": "Weight",
+        "value": "{{weight}} kg"
+      }
+    }
+  },
   "home": {
+    "error": "An error occurred while trying to log out.",
     "logout": "Testando"
   }
 }

@@ -1,18 +1,24 @@
 import { useTranslation } from "react-i18next";
-import { supabase } from "../services";
-import { Button } from "../shared";
+import { Button, ErrorAlert } from "../components";
+import { useAuthApi } from "../hooks";
+import { BabyInfo } from "../components";
 
 export function HomePage() {
   const { t } = useTranslation();
+  const api = useAuthApi();
 
   return (
     <div>
       <h1>Home</h1>
-      <p>Welcome to the Home page!</p>
+      <BabyInfo />
+
+      <ErrorAlert>
+        {t("home.error", "An error occurred while trying to log out.")}
+      </ErrorAlert>
 
       <Button
         onClick={() => {
-          supabase.auth.signOut();
+          api.signOut();
         }}
       >
         {t("home.logout", "Testando")}
