@@ -18,8 +18,36 @@
       }
     }
   },
+  "signInForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Wrong email or password"
+      },
+      "label": "Sign In"
+    },
+    "email": {
+      "errors": {
+        "required": "Email is required",
+        "invalid": "Invalid email address"
+      },
+      "label": "Email"
+    },
+    "password": {
+      "errors": {
+        "required": "Password is required",
+        "minLength": "Password must be at least 6 characters"
+      },
+      "label": "Password"
+    }
+  },
   "home": {
     "error": "An error occurred while trying to log out.",
     "logout": "Testando"
+  },
+  "signIn": {
+    "title": "Baby manager",
+    "welcome": "Welcome",
+    "signUpRedirect": "If you don't have an account, create <linkRedirect>here</linkRedirect>."
   }
 }

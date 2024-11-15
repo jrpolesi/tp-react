@@ -3,8 +3,7 @@ import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useSessionContext } from "../../contexts";
-import { CardWithIcon } from "../CardWithIcon";
-import { Typography } from "../Typograph";
+import { CardWithIcon, Typography } from "../Shared";
 import { BabyCardAvatar } from "./BabyAvatar";
 
 export function BabyInfo() {

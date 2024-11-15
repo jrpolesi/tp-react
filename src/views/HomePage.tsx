@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { Button, ErrorAlert } from "../components";
+import { Alert, BabyInfo, Button } from "../components";
 import { useAuthApi } from "../hooks";
-import { BabyInfo } from "../components";
 
 export function HomePage() {
   const { t } = useTranslation();
@@ -12,9 +11,9 @@ export function HomePage() {
       <h1>Home</h1>
       <BabyInfo />
 
-      <ErrorAlert>
+      <Alert severity="error">
         {t("home.error", "An error occurred while trying to log out.")}
-      </ErrorAlert>
+      </Alert>
 
       <Button
         onClick={() => {
