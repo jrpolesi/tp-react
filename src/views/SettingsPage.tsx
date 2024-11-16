@@ -1,7 +1,13 @@
+import { useTranslation } from "react-i18next";
+import { DarkModeSwitch, LanguageSelector, PageTemplate } from "../components";
+
 export function SettingsPage() {
+  const { t } = useTranslation();
+
   return (
-    <div>
-      <h1>Settings</h1>
-    </div>
+    <PageTemplate title={t("settingsPage.title", "Settings")} withAppBar>
+      <LanguageSelector />
+      <DarkModeSwitch />
+    </PageTemplate>
   );
 }

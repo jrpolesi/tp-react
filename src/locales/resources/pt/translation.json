@@ -20,6 +20,33 @@
       }
     }
   },
+  "fabMenu": {
+    "menu": {
+      "item": {
+        "settings": {
+          "label": "Configurações"
+        },
+        "dashboard": {
+          "label": "Painel"
+        },
+        "logout": {
+          "label": "Sair"
+        }
+      }
+    }
+  },
+  "languageSelector": {
+    "label": "Idioma",
+    "english": {
+      "label": "Inglês"
+    },
+    "spanish": {
+      "label": "Espanhol"
+    },
+    "portuguese": {
+      "label": "Português"
+    }
+  },
   "signInForm": {
     "submit": {
       "errors": {
@@ -103,9 +130,11 @@
       "label": "Senha"
     }
   },
-  "home": {
-    "error": "Ocorreu um erro ao tentar sair.",
-    "logout": "Testando"
+  "dashboardPage": {
+    "title": "Dashboard"
+  },
+  "settingsPage": {
+    "title": "Settings"
   },
   "signIn": {
     "title": "Gerenciador de bebês",

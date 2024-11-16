@@ -18,6 +18,33 @@
       }
     }
   },
+  "fabMenu": {
+    "menu": {
+      "item": {
+        "settings": {
+          "label": "Settings"
+        },
+        "dashboard": {
+          "label": "Dashboard"
+        },
+        "logout": {
+          "label": "Logout"
+        }
+      }
+    }
+  },
+  "languageSelector": {
+    "label": "Language",
+    "english": {
+      "label": "English"
+    },
+    "spanish": {
+      "label": "Spanish"
+    },
+    "portuguese": {
+      "label": "Portuguese"
+    }
+  },
   "signInForm": {
     "submit": {
       "errors": {
@@ -101,9 +128,11 @@
       "label": "Password"
     }
   },
-  "home": {
-    "error": "An error occurred while trying to log out.",
-    "logout": "Testando"
+  "dashboardPage": {
+    "title": "Dashboard"
+  },
+  "settingsPage": {
+    "title": "Settings"
   },
   "signIn": {
     "title": "Baby manager",

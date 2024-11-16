@@ -1,5 +1,7 @@
 export const STORAGE_KEYS = {
   token: "@baby.token",
+  language: "@baby.language",
+  theme: "@baby.theme",
 } as const;
 
 export type Storage_Key = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
@@ -31,5 +33,21 @@ export class Storage {
 
   public static removeToken() {
     localStorage.removeItem(STORAGE_KEYS.token);
+  }
+
+  public static getLanguage() {
+    return this.getItem<string>(STORAGE_KEYS.language);
+  }
+
+  public static setLanguage(language: string) {
+    this.setItem(STORAGE_KEYS.language, language);
+  }
+
+  public static getTheme() {
+    return this.getItem<string>(STORAGE_KEYS.theme);
+  }
+
+  public static setTheme(theme: string) {
+    this.setItem(STORAGE_KEYS.theme, theme);
   }
 }
