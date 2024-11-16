@@ -1,3 +1,4 @@
+export * from "./BabyActions";
 export * from "./BabyForm";
 export * from "./BabyInfo";
 export * from "./DarkModeSwitch";

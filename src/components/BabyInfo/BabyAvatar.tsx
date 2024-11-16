@@ -1,8 +1,8 @@
-import { Avatar, AvatarProps } from "@mui/material";
+import { Avatar, AvatarProps, Stack } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { baby } from "../../assets";
 import { calculateAge } from "../../utils";
-import { CardWithIcon, Typography } from "../Shared";
+import { Typography } from "../Shared";
 
 export type BabyAvatarProps = AvatarProps & {
   name: string;
@@ -31,8 +31,23 @@ export function BabyCardAvatar({ name, birthdate, ...props }: BabyAvatarProps) {
   }
 
   return (
-    <CardWithIcon icon={<Avatar src={baby} {...props} />} title={name}>
-      <Typography variant="body1">{ageMessage}</Typography>
-    </CardWithIcon>
+    <Stack alignItems="center" gap=".9rem">
+      <Avatar src={baby} {...props} />
+
+      <Stack alignItems="center" gap=".25rem">
+        <Typography
+          sx={{
+            textAlign: "center",
+            fontSize: "1.5rem",
+            fontWeight: "500",
+            lineHeight: "1",
+          }}
+        >
+          {name}
+        </Typography>
+
+        <Typography>{ageMessage}</Typography>
+      </Stack>
+    </Stack>
   );
 }

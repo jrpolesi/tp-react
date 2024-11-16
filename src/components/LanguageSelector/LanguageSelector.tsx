@@ -1,6 +1,7 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLanguageOptions } from "./useLanguageOptions";
 
 export function LanguageSelector() {
   const { i18n, t } = useTranslation();
@@ -31,26 +32,4 @@ export function LanguageSelector() {
       </Select>
     </FormControl>
   );
-}
-
-function useLanguageOptions(): Record<
-  string,
-  { label: string; value: string }
-> {
-  const { t } = useTranslation();
-
-  return {
-    en: {
-      label: t("languageSelector.english.label", "English"),
-      value: "en",
-    },
-    es: {
-      label: t("languageSelector.spanish.label", "Spanish"),
-      value: "es",
-    },
-    pt: {
-      label: t("languageSelector.portuguese.label", "Portuguese"),
-      value: "pt",
-    },
-  };
 }

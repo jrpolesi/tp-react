@@ -4,13 +4,33 @@ import { ApiProvider, LocalizedProvider, SessionProvider } from "./contexts";
 import { Routes } from "./routes";
 import { Storage } from "./services";
 
-const theme = createTheme({
+let theme = createTheme({});
+
+theme = createTheme({
   colorSchemes: {
     dark: true,
   },
   palette: {
     // mode: "dark",
-  },
+    salmon: theme.palette.augmentColor({
+      color: {
+        main: "#FF5733",
+      },
+      name: "salmon",
+    }),
+    purple: theme.palette.augmentColor({
+      color: {
+        main: "#8533ff",
+      },
+      name: "blue",
+    }),
+    green: theme.palette.augmentColor({
+      color: {
+        main: "#00a62f",
+      },
+      name: "green",
+    }),
+  } as any,
 });
 
 function App() {

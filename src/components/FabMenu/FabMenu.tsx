@@ -1,13 +1,9 @@
-import LeaderboardIcon from "@mui/icons-material/Leaderboard";
-import LogoutIcon from "@mui/icons-material/Logout";
 import MenuIcon from "@mui/icons-material/Menu";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { Box, CircularProgress, Menu, MenuItem, Stack } from "@mui/material";
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { useAuthApi } from "../hooks";
-import { Fab } from "./Shared/MuiWrap";
+import { Fab } from "../Shared/MuiWrap";
+import { useMenuItems } from "./useMenuItems";
 
 export function FabMenu() {
   const menuItems = useMenuItems();
@@ -28,8 +24,16 @@ export function FabMenu() {
     <Box
       sx={{
         position: "fixed",
-        right: "4rem",
-        bottom: "2rem",
+        right: {
+          xs: "1rem",
+          sm: "2rem",
+          md: "4rem",
+        },
+        bottom: {
+          xs: "1rem",
+          sm: "2rem",
+        },
+        zIndex: 1000,
       }}
     >
       <Fab
@@ -95,33 +99,4 @@ export function FabMenu() {
       </Menu>
     </Box>
   );
-}
-
-function useMenuItems() {
-  const { t } = useTranslation();
-
-  const api = useAuthApi();
-
-  return [
-    {
-      id: 1,
-      icon: <SettingsIcon />,
-      label: t("fabMenu.menu.item.settings.label", "Settings"),
-      to: "/settings",
-    },
-    {
-      id: 2,
-      icon: <LeaderboardIcon />,
-      label: t("fabMenu.menu.item.dashboard.label", "Dashboard"),
-      to: "/dashboard",
-    },
-    {
-      id: 3,
-      icon: <LogoutIcon color="warning" />,
-      label: t("fabMenu.menu.item.logout.label", "Logout"),
-      onClick: async () => {
-        await api.signOut();
-      },
-    },
-  ];
 }

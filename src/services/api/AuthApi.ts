@@ -8,7 +8,9 @@ type UserSignIn = {
   password: string;
 };
 
-type UserSignUp = UserSignIn & { [K in keyof User]: NonNullable<User[K]> };
+type UserSignUp = UserSignIn & {
+  [K in keyof Omit<User, "id">]: NonNullable<User[K]>;
+};
 
 type SessionWithUser = Session & { user: { user_metadata: User } };
 
