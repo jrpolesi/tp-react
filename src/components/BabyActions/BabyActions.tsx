@@ -34,6 +34,7 @@ export function BabyActions({ actions }: BabyActionsProps) {
       {actions.map((action) => {
         return (
           <ActionCard
+            key={action.title}
             action={action}
             sx={{
               minWidth: "10rem",

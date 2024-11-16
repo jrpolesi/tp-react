@@ -9,7 +9,7 @@ import {
   Box,
   ControlledDatePicker,
   ControlledTextField,
-  LoadingButton,
+  SubmitButton,
 } from "../Shared";
 
 type FormFields = {
@@ -53,7 +53,7 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
     },
   });
   const { control, formState } = form;
-  const { errors, isLoading, isSubmitting } = formState;
+  const { errors } = formState;
 
   async function onSubmit(values: FormFields) {
     await onFormSubmit({
@@ -82,8 +82,6 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
       message,
     };
   });
-
-  const isFormLoading = isLoading || isSubmitting;
 
   return (
     <Box
@@ -257,18 +255,9 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
 
       {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
-      <LoadingButton
-        type="submit"
-        variant="contained"
-        loading={isFormLoading}
-        disabled={isFormLoading}
-        size="large"
-        sx={{
-          alignSelf: "flex-end",
-        }}
-      >
+      <SubmitButton formState={formState}>
         {t("signUpForm.submit.label", "Sign Up")}
-      </LoadingButton>
+      </SubmitButton>
     </Box>
   );
 }

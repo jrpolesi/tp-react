@@ -7,6 +7,7 @@ import {
   Action,
   BabyActions,
   BabyInfo,
+  BabyItemsList,
   CentralizedSpinner,
   Container,
   FabMenu,
@@ -41,7 +42,7 @@ export function HomePage() {
         sx={{
           flex: "1",
           marginTop: "5.5rem",
-          padding: "1rem 0",
+          padding: "1rem 0 4rem",
           backgroundColor: "primary.main",
         }}
       >
@@ -51,6 +52,8 @@ export function HomePage() {
           }}
         >
           <BabyActions actions={actions} />
+
+          <BabyItemsList />
         </Container>
       </Box>
       <FabMenu />
@@ -73,7 +76,7 @@ function useBabyActions(): Action[] {
       Icon: RestaurantMenuIcon,
       title: t("homePage.babyActions.feed.title", "Feed"),
       label: t("homePage.babyActions.feed.label", "Add new"),
-      to: "/form?type=feed",
+      to: "/form?type=eat",
       color: "green",
     },
     {
