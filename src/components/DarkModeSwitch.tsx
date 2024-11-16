@@ -9,7 +9,13 @@ export function DarkModeSwitch() {
   const { mode, setMode } = useColorScheme();
 
   return (
-    <FormControl component="fieldset" variant="standard">
+    <FormControl
+      component="fieldset"
+      variant="standard"
+      sx={{
+        margin: "0 5px",
+      }}
+    >
       <FormLabel component="legend">
         {t("darkModeSwitch.label", "Select theme")}
       </FormLabel>

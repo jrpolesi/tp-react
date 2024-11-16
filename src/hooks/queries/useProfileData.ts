@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSessionContext } from "../../contexts";
 import { Profile } from "../../types";
-import { useProfileApi } from "../useProfileApi";
+import { useProfileApi } from "../api/useProfileApi";
 
 export function useProfileData() {
   const [profile, setProfile] = useState<Profile | undefined>();

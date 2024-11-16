@@ -8,7 +8,7 @@ i18n
   .init({
     resources,
     lng: Storage.getLanguage() ?? "pt", // if you're using a language detector, do not define the lng option
-    fallbackLng: "pt",
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape
     },

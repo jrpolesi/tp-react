@@ -1,6 +1,5 @@
-import { CircularProgress } from "@mui/material";
 import { Navigate, Outlet } from "react-router-dom";
-import { Box } from "../components";
+import { Box, CentralizedSpinner } from "../components";
 import { useSessionContext } from "../contexts";
 
 export function ProtectedRoute() {
@@ -16,7 +15,14 @@ export function ProtectedRoute() {
           minHeight: "100vh",
         }}
       >
-        <CircularProgress size={40} />
+        <CentralizedSpinner
+          sx={{
+            minHeight: "100vh",
+          }}
+          spinnerProps={{
+            size: 40,
+          }}
+        />
       </Box>
     );
   }

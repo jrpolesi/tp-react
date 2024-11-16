@@ -51,8 +51,8 @@ export function BabyForm({
       babyBirthdate: dayjs(defaultValue.babyBirthdate),
     },
   });
-  const { control, formState } = form;
-  const { errors, isLoading, isSubmitting } = formState;
+  const { control, formState, reset } = form;
+  const { errors, isLoading, isSubmitting, isDirty } = formState;
 
   async function onSubmit(values: FormFields) {
     await onFormSubmit({
@@ -60,6 +60,10 @@ export function BabyForm({
       babyBirthdate: values.babyBirthdate.toDate(),
       babyLength: parseInt(values.babyLength),
       babyWeight: parseFloat(values.babyWeight),
+    });
+
+    reset({
+      ...values,
     });
   }
 
@@ -199,13 +203,16 @@ export function BabyForm({
         type="submit"
         variant="contained"
         loading={isFormLoading}
-        disabled={isFormLoading}
+        disabled={isFormLoading || !isDirty}
         size="large"
         sx={{
           alignSelf: "flex-end",
+          textTransform: "none",
         }}
       >
-        {t("babyForm.submit.label", "Save")}
+        {isDirty
+          ? t("babyForm.submit.label", "Save")
+          : t("babyForm.edit.label", "Edit")}
       </LoadingButton>
     </Box>
   );

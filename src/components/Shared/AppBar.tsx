@@ -24,6 +24,7 @@ export function AppBar({ title }: AppBarProps) {
           xs: ".75rem",
           sm: "1rem",
         },
+        zIndex: 1100,
       }}
     >
       <IconButton
