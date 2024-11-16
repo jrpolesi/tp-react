@@ -188,7 +188,7 @@
     "babyInformation": {
       "title": "Baby information",
       "submit": {
-        "sucess": "Baby information updated successfully"
+        "success": "Baby information updated successfully"
       }
     }
   },

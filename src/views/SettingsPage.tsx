@@ -56,7 +56,7 @@ export function SettingsPage() {
                   });
                   open({
                     content: t(
-                      "settingsPage.babyInformation.submit.sucess",
+                      "settingsPage.babyInformation.submit.success",
                       "Baby information updated successfully"
                     ),
                     severity: "success",
