@@ -2,17 +2,16 @@ import ScaleIcon from "@mui/icons-material/Scale";
 import SignalCellularAltIcon from "@mui/icons-material/SignalCellularAlt";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { useSessionContext } from "../../contexts";
+import { Profile } from "../../types";
 import { CardWithIcon, Typography } from "../Shared";
 import { BabyCardAvatar } from "./BabyAvatar";
 
-export function BabyInfo() {
-  const { t } = useTranslation();
+type BabyInfoProps = {
+  profile: Profile;
+};
 
-  const { user } = useSessionContext();
-  if (!user) {
-    throw new Error("User not found");
-  }
+export function BabyInfo({ profile }: BabyInfoProps) {
+  const { t } = useTranslation();
 
   return (
     <Box>
@@ -22,13 +21,13 @@ export function BabyInfo() {
       >
         <Typography>
           {t("babyInfo.baby.length.value", "{{length}} cm", {
-            replace: { length: user.babyLength },
+            replace: { length: profile.babyLength },
           })}
         </Typography>
       </CardWithIcon>
       <BabyCardAvatar
-        name={user.babyName ?? ""}
-        birthdate={user.babyBirthdate}
+        name={profile.babyName ?? ""}
+        birthdate={profile.babyBirthdate}
       />
       <CardWithIcon
         icon={<ScaleIcon />}
@@ -36,7 +35,7 @@ export function BabyInfo() {
       >
         <Typography>
           {t("babyInfo.baby.weight.value", "{{weight}} kg", {
-            replace: { weight: user.babyWeight },
+            replace: { weight: profile.babyWeight },
           })}
         </Typography>
       </CardWithIcon>

@@ -14,6 +14,7 @@ type SessionWithUser = Session & { user: { user_metadata: User } };
 
 export class AuthApi {
   private client: Client;
+
   constructor(client: Client) {
     this.client = client;
   }
@@ -87,6 +88,7 @@ function sessionToSessionWithUser(
     user: {
       ...session.user,
       user_metadata: {
+        id: session.user.id,
         email: session.user.user_metadata.email,
         username: session.user.user_metadata.username,
         babyName: session.user.user_metadata.baby_name,

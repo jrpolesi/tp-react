@@ -1,4 +1,44 @@
 {
+  "babyForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "babyName": {
+      "errors": {
+        "required": "Baby name is required"
+      },
+      "label": "Name"
+    },
+    "babyBirthDate": {
+      "errors": {
+        "required": "Baby birth date is required",
+        "future": "Baby birth date can't be in the future"
+      },
+      "label": "Birth date"
+    },
+    "babyLength": {
+      "errors": {
+        "required": "Baby length is required",
+        "min": "Baby length must be greater than 1",
+        "decimal": "Baby length must be an integer"
+      },
+      "label": "Length"
+    },
+    "babyWeight": {
+      "errors": {
+        "required": "Baby weight is required",
+        "min": "Baby weight must be greater than 1"
+      },
+      "label": "Weight"
+    },
+    "edit": {
+      "label": "Edit"
+    }
+  },
   "babyInfo": {
     "baby": {
       "age": {
@@ -16,6 +56,42 @@
         "label": "Weight",
         "value": "{{weight}} kg"
       }
+    }
+  },
+  "darkModeSwitch": {
+    "label": "Select theme",
+    "light": {
+      "label": "Light"
+    },
+    "dark": {
+      "label": "Dark"
+    }
+  },
+  "fabMenu": {
+    "menu": {
+      "item": {
+        "settings": {
+          "label": "Settings"
+        },
+        "dashboard": {
+          "label": "Dashboard"
+        },
+        "logout": {
+          "label": "Logout"
+        }
+      }
+    }
+  },
+  "languageSelector": {
+    "label": "Language",
+    "english": {
+      "label": "English"
+    },
+    "spanish": {
+      "label": "Spanish"
+    },
+    "portuguese": {
+      "label": "Portuguese"
     }
   },
   "signInForm": {
@@ -101,9 +177,20 @@
       "label": "Password"
     }
   },
-  "home": {
-    "error": "An error occurred while trying to log out.",
-    "logout": "Testando"
+  "dashboardPage": {
+    "title": "Dashboard"
+  },
+  "settingsPage": {
+    "title": "Settings",
+    "siteSettings": {
+      "title": "Site settings"
+    },
+    "babyInformation": {
+      "title": "Baby information",
+      "submit": {
+        "sucess": "Baby information updated successfully"
+      }
+    }
   },
   "signIn": {
     "title": "Baby manager",

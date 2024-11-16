@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             element: <SettingsPage />,
           },
           {
-            path: "form",
+            path: "/form",
             element: <FormPage />,
           },
         ],

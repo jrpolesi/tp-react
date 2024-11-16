@@ -1,7 +1,13 @@
+import { useTranslation } from "react-i18next";
+import { PageTemplate } from "../components";
+
 export function DashboardPage() {
+  const { t } = useTranslation();
+
   return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
+    <PageTemplate
+      title={t("dashboardPage.title", "Dashboard")}
+      withAppBar
+    ></PageTemplate>
   );
 }

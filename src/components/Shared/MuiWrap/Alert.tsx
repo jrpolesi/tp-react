@@ -1,5 +1,10 @@
 import { AlertProps, Alert as MuiAlert } from "@mui/material";
 
-export function Alert(props: AlertProps) {
-  return <MuiAlert severity="error" {...props} />;
-}
+import { forwardRef } from "react";
+
+export const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
+  props,
+  ref
+) {
+  return <MuiAlert severity="error" {...props} ref={ref} />;
+});

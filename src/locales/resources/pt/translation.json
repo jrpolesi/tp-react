@@ -1,4 +1,44 @@
 {
+  "babyForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "babyName": {
+      "errors": {
+        "required": "O nome do bebê é obrigatório"
+      },
+      "label": "Nome"
+    },
+    "babyBirthDate": {
+      "errors": {
+        "required": "A data de nascimento do bebê é obrigatória",
+        "future": "A data de nascimento do bebê não pode estar no futuro"
+      },
+      "label": "Data de nascimento"
+    },
+    "babyLength": {
+      "errors": {
+        "required": "O comprimento do bebê é obrigatório",
+        "min": "O comprimento do bebê deve ser maior que 1",
+        "decimal": "O comprimento do bebê deve ser um número inteiro"
+      },
+      "label": "Comprimento"
+    },
+    "babyWeight": {
+      "errors": {
+        "required": "O peso do bebê é obrigatório",
+        "min": "O peso do bebê deve ser maior que 1"
+      },
+      "label": "Peso"
+    },
+    "edit": {
+      "label": "Editar"
+    }
+  },
   "babyInfo": {
     "baby": {
       "age": {
@@ -18,6 +58,42 @@
         "label": "Peso",
         "value": "{{weight}} kg"
       }
+    }
+  },
+  "darkModeSwitch": {
+    "label": "Selecionar tema",
+    "light": {
+      "label": "Claro"
+    },
+    "dark": {
+      "label": "Escuro"
+    }
+  },
+  "fabMenu": {
+    "menu": {
+      "item": {
+        "settings": {
+          "label": "Configurações"
+        },
+        "dashboard": {
+          "label": "Painel"
+        },
+        "logout": {
+          "label": "Sair"
+        }
+      }
+    }
+  },
+  "languageSelector": {
+    "label": "Idioma",
+    "english": {
+      "label": "Inglês"
+    },
+    "spanish": {
+      "label": "Espanhol"
+    },
+    "portuguese": {
+      "label": "Português"
     }
   },
   "signInForm": {
@@ -103,9 +179,20 @@
       "label": "Senha"
     }
   },
-  "home": {
-    "error": "Ocorreu um erro ao tentar sair.",
-    "logout": "Testando"
+  "dashboardPage": {
+    "title": "Dashboard"
+  },
+  "settingsPage": {
+    "title": "Configurações",
+    "siteSettings": {
+      "title": "Configurações do site"
+    },
+    "babyInformation": {
+      "title": "Informações do bebê",
+      "submit": {
+        "success": "Informações do bebê atualizadas com sucesso"
+      }
+    }
   },
   "signIn": {
     "title": "Gerenciador de bebês",

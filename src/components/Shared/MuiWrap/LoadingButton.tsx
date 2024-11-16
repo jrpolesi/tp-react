@@ -4,5 +4,5 @@ import {
 } from "@mui/lab";
 
 export function LoadingButton(props: LoadingButtonProps) {
-  return <MuiLoadingButton {...props} />;
+  return <MuiLoadingButton {...props}  />;
 }

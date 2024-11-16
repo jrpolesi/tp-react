@@ -1,5 +1,7 @@
 export const STORAGE_KEYS = {
-  token: "@baby.token",
+  user: "@baby.user_id",
+  language: "@baby.language",
+  theme: "@baby.theme",
 } as const;
 
 export type Storage_Key = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
@@ -17,19 +19,35 @@ export class Storage {
     return jsonValue ? JSON.parse(jsonValue) : null;
   }
 
-  public static getToken() {
-    return this.getItem<string>(STORAGE_KEYS.token);
+  public static getUser() {
+    return this.getItem<string>(STORAGE_KEYS.user);
   }
 
-  public static setToken(token: string | null) {
-    if (!token) {
-      return this.removeToken();
+  public static setUser(userId: string | null) {
+    if (!userId) {
+      return this.removeUser();
     }
 
-    this.setItem(STORAGE_KEYS.token, token);
+    this.setItem(STORAGE_KEYS.user, userId);
   }
 
-  public static removeToken() {
-    localStorage.removeItem(STORAGE_KEYS.token);
+  public static removeUser() {
+    localStorage.removeItem(STORAGE_KEYS.user);
+  }
+
+  public static getLanguage() {
+    return this.getItem<string>(STORAGE_KEYS.language);
+  }
+
+  public static setLanguage(language: string) {
+    this.setItem(STORAGE_KEYS.language, language);
+  }
+
+  public static getTheme() {
+    return this.getItem<string>(STORAGE_KEYS.theme);
+  }
+
+  public static setTheme(theme: string) {
+    this.setItem(STORAGE_KEYS.theme, theme);
   }
 }
