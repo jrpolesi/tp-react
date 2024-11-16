@@ -6,8 +6,8 @@ import { Box, CircularProgress, Menu, MenuItem, Stack } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { useAuthApi } from "../../hooks";
-import { Fab } from "./MuiWrap";
+import { useAuthApi } from "../hooks";
+import { Fab } from "./Shared/MuiWrap";
 
 export function FabMenu() {
   const menuItems = useMenuItems();

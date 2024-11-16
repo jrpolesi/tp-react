@@ -1,7 +1,7 @@
 import { FormControl, FormLabel, Stack, useColorScheme } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { Storage } from "../../services";
-import { Switch, Typography } from "./MuiWrap";
+import { Storage } from "../services";
+import { Switch, Typography } from "./Shared/MuiWrap";
 
 export function DarkModeSwitch() {
   const { t } = useTranslation();

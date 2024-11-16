@@ -27,9 +27,9 @@ export function AppBar({ title }: AppBarProps) {
       }}
     >
       <IconButton
-        component={forwardRef(({ children }, ref) => (
+        component={forwardRef(({ children }, _) => (
           <Box
-            ref={ref as any}
+            itemRef={undefined}
             component={Link}
             sx={{
               display: "flex",
