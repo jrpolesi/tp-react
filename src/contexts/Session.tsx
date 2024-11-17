@@ -34,7 +34,7 @@ export function SessionProvider({ children }: PropsWithChildren<{}>) {
   useEffect(() => {
     const subscription = api.subscribeSession((session) => {
       const user = session?.user.user_metadata ?? null;
-      Storage.setUser(session?.user.id ?? null);
+      Storage.setUserId(session?.user.id ?? null);
 
       setContextValue({
         user: user,

@@ -1,5 +1,6 @@
 export * from "./DashboardPage";
 export * from "./FormPage";
+export * from "./FormUpdatePage";
 export * from "./HomePage";
 export * from "./NotFoundPage";
 export * from "./PageLayout";

@@ -1,5 +1,9 @@
-import { ButtonProps, Button as MuiButton } from "@mui/material";
+import {
+  ButtonTypeMap,
+  ExtendButtonBase,
+  Button as MuiButton,
+} from "@mui/material";
 
-export function Button(props: ButtonProps) {
+export const Button: ExtendButtonBase<ButtonTypeMap> = (props: any) => {
   return <MuiButton {...props} />;
-}
+};

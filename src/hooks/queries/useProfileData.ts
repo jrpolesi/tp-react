@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { useSessionContext } from "../../contexts";
+import { Storage } from "../../services";
 import { Profile } from "../../types";
 import { useProfileApi } from "../api/useProfileApi";
 
 export function useProfileData() {
-  const [profile, setProfile] = useState<Profile | undefined>();
+  const [profile, setProfile] = useState<Profile | null>(Storage.getProfile());
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<unknown | null>(null);
 
-  const api = useProfileApi();
   const { user } = useSessionContext();
+
+  const api = useProfileApi();
 
   useEffect(() => {
     async function fetchProfile() {

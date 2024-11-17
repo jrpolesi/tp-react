@@ -1,9 +1,9 @@
 import { BoxProps, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ApiError } from "../../errors";
-import { useHandleSubmit } from "../../hooks";
-import { Alert, Box, ControlledTextField, LoadingButton } from "../Shared";
+import { ApiError } from "../errors";
+import { useHandleSubmit } from "../hooks";
+import { Alert, Box, ControlledTextField, SubmitButton } from "./Shared";
 
 type FormFields = {
   submit: void;
@@ -26,7 +26,7 @@ export function SignInForm({ onFormSubmit, ...props }: SignInFormProps) {
     defaultValues: { email: "", password: "" },
   });
   const { control, formState } = form;
-  const { errors, isLoading, isSubmitting } = formState;
+  const { errors } = formState;
 
   async function onSubmit({ email, password }: FormFields) {
     await onFormSubmit({
@@ -51,12 +51,9 @@ export function SignInForm({ onFormSubmit, ...props }: SignInFormProps) {
     };
   });
 
-  const isFormLoading = isLoading || isSubmitting;
-
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{
@@ -109,20 +106,11 @@ export function SignInForm({ onFormSubmit, ...props }: SignInFormProps) {
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
-      <LoadingButton
-        type="submit"
-        variant="contained"
-        loading={isFormLoading}
-        disabled={isFormLoading}
-        size="large"
-        sx={{
-          alignSelf: "flex-end",
-        }}
-      >
+      <SubmitButton formState={formState}>
         {t("signInForm.submit.label", "Sign In")}
-      </LoadingButton>
+      </SubmitButton>
     </Box>
   );
 }

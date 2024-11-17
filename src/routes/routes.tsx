@@ -1,7 +1,12 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import {
   DashboardPage,
   FormPage,
+  FormUpdatePage,
   HomePage,
   NotFoundPage,
   PageLayout,
@@ -16,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <PageLayout />,
-    errorElement: <NotFoundPage />,
+    errorElement: <Navigate to="/not-found" />,
     children: [
       // protected routes
       {
@@ -39,6 +44,10 @@ const router = createBrowserRouter([
             path: "/form",
             element: <FormPage />,
           },
+          {
+            path: "/form/:itemId",
+            element: <FormUpdatePage />,
+          },
         ],
       },
       // public routes
@@ -55,6 +64,11 @@ const router = createBrowserRouter([
             element: <SignUpPage />,
           },
         ],
+      },
+      // not found
+      {
+        path: "/not-found",
+        element: <NotFoundPage />,
       },
     ],
   },
