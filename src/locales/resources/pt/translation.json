@@ -60,6 +60,153 @@
       }
     }
   },
+  "diaperForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "diaperStatus": {
+      "options": {
+        "clean": {
+          "label": "Limpa"
+        },
+        "wet": {
+          "label": "Molhada"
+        },
+        "dirty": {
+          "label": "Suja"
+        },
+        "both": {
+          "label": "Ambos"
+        }
+      },
+      "errors": {
+        "required": "O estado da fralda é obrigatório"
+      },
+      "label": "Estado da fralda"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "A data é obrigatória"
+      },
+      "label": "Data"
+    },
+    "observation": {
+      "errors": {
+        "required": "A observação é obrigatória"
+      },
+      "label": "Observação"
+    }
+  },
+  "feedForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "feedingType": {
+      "options": {
+        "bottle": {
+          "label": "Mamadeira"
+        },
+        "breast": {
+          "label": "Seios"
+        }
+      },
+      "errors": {
+        "required": "O tipo de alimentação é obrigatório"
+      },
+      "label": "Tipo de alimentação"
+    },
+    "breastSide": {
+      "options": {
+        "left": {
+          "label": "Esquerdo"
+        },
+        "right": {
+          "label": "Direito"
+        },
+        "both": {
+          "label": "Ambos"
+        }
+      },
+      "errors": {
+        "required": "O lado do seio é obrigatório"
+      },
+      "label": "Lado do seio"
+    },
+    "amount": {
+      "errors": {
+        "required": "A quantidade é obrigatória",
+        "min": "A quantidade deve ser maior que 1",
+        "decimal": "A quantidade deve ser um número inteiro"
+      },
+      "label": "Quantidade"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "A data de início é obrigatória"
+      },
+      "label": "Data de início"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "A data de término é obrigatória",
+        "invalid": "A data de término deve ser após a data de início"
+      },
+      "label": "Data de término"
+    },
+    "observation": {
+      "errors": {
+        "required": "A observação é obrigatória"
+      },
+      "label": "Observação"
+    }
+  },
+  "sleepForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "A data de início é obrigatória"
+      },
+      "label": "Data de início"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "A data de término é obrigatória",
+        "invalid": "A data de término deve ser após a data de início"
+      },
+      "label": "Data de término"
+    },
+    "observation": {
+      "errors": {
+        "required": "A observação é obrigatória"
+      },
+      "label": "Observação"
+    }
+  },
+  "useItemForm": {
+    "sleep": {
+      "title": "Sono"
+    },
+    "diaper": {
+      "title": "Fralda"
+    },
+    "eat": {
+      "title": "Alimentação"
+    }
+  },
   "darkModeSwitch": {
     "label": "Selecionar tema",
     "light": {
@@ -181,6 +328,27 @@
   },
   "dashboardPage": {
     "title": "Dashboard"
+  },
+  "formPage": {
+    "submit": {
+      "success": "Salvo com sucesso"
+    }
+  },
+  "homePage": {
+    "babyActions": {
+      "sleep": {
+        "title": "Sono",
+        "label": "Adicionar novo"
+      },
+      "feed": {
+        "title": "Alimentação",
+        "label": "Adicionar novo"
+      },
+      "diaper": {
+        "title": "Fralda",
+        "label": "Adicionar novo"
+      }
+    }
   },
   "settingsPage": {
     "title": "Configurações",

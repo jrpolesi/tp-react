@@ -58,6 +58,153 @@
       }
     }
   },
+  "diaperForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "diaperStatus": {
+      "options": {
+        "clean": {
+          "label": "Clean"
+        },
+        "wet": {
+          "label": "Wet"
+        },
+        "dirty": {
+          "label": "Dirty"
+        },
+        "both": {
+          "label": "Both"
+        }
+      },
+      "errors": {
+        "required": "Diaper state is required"
+      },
+      "label": "Diaper state"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "Date is required"
+      },
+      "label": "Date"
+    },
+    "observation": {
+      "errors": {
+        "required": "Observation is required"
+      },
+      "label": "Observation"
+    }
+  },
+  "feedForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "feedingType": {
+      "options": {
+        "bottle": {
+          "label": "Bottle"
+        },
+        "breast": {
+          "label": "Breast"
+        }
+      },
+      "errors": {
+        "required": "Feeding type is required"
+      },
+      "label": "Feeding type"
+    },
+    "breastSide": {
+      "options": {
+        "left": {
+          "label": "Left"
+        },
+        "right": {
+          "label": "Right"
+        },
+        "both": {
+          "label": "Both"
+        }
+      },
+      "errors": {
+        "required": "Breast side is required"
+      },
+      "label": "Breast side"
+    },
+    "amount": {
+      "errors": {
+        "required": "Amount is required",
+        "min": "Amount must be greater than 1",
+        "decimal": "Amount must be an integer"
+      },
+      "label": "Amount"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "Start date is required"
+      },
+      "label": "Start date"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "End date is required",
+        "invalid": "End date must be after start date"
+      },
+      "label": "End date"
+    },
+    "observation": {
+      "errors": {
+        "required": "Observation is required"
+      },
+      "label": "Observation"
+    }
+  },
+  "sleepForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "Start date is required"
+      },
+      "label": "Start date"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "End date is required",
+        "invalid": "End date must be after start date"
+      },
+      "label": "End date"
+    },
+    "observation": {
+      "errors": {
+        "required": "Observation is required"
+      },
+      "label": "Observation"
+    }
+  },
+  "useItemForm": {
+    "sleep": {
+      "title": "Sleep"
+    },
+    "diaper": {
+      "title": "Diaper"
+    },
+    "eat": {
+      "title": "Eat"
+    }
+  },
   "darkModeSwitch": {
     "label": "Select theme",
     "light": {
@@ -179,6 +326,27 @@
   },
   "dashboardPage": {
     "title": "Dashboard"
+  },
+  "formPage": {
+    "submit": {
+      "success": "Saved successfully"
+    }
+  },
+  "homePage": {
+    "babyActions": {
+      "sleep": {
+        "title": "Sleep",
+        "label": "Add new"
+      },
+      "feed": {
+        "title": "Feed",
+        "label": "Add new"
+      },
+      "diaper": {
+        "title": "Diaper",
+        "label": "Add new"
+      }
+    }
   },
   "settingsPage": {
     "title": "Settings",
