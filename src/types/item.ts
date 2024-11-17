@@ -20,3 +20,8 @@ export type Item = {
   diaperStatus?: DiaperStatus | null;
   feedingType?: FeedingType | null;
 };
+
+export type ItemCount = {
+  type: ItemType;
+  count: number;
+};

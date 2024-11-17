@@ -208,6 +208,11 @@
   "babyItemsList": {
     "error": "An error occurred while fetching baby items data"
   },
+  "charts": {
+    "itemsCount": {
+      "title": "Items count by type"
+    }
+  },
   "darkModeSwitch": {
     "label": "Select theme",
     "light": {
@@ -343,7 +348,8 @@
     }
   },
   "dashboardPage": {
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "error": "An error occurred while loading the data"
   },
   "formPage": {
     "submit": {
