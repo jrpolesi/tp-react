@@ -30,7 +30,7 @@ export function ActionCard({ action, sx }: ActionCardProps) {
           sm: "1rem 1rem 2rem",
         },
         borderRadius: "1rem",
-        boxShadow: "0 0 1rem rgba(0, 0, 0, 0.1)",
+        boxShadow: 3,
         ...sx,
       }}
     >
