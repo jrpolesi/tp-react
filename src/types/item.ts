@@ -13,7 +13,7 @@ export type Item = {
   startDatetime?: Date | null;
   endDatetime?: Date | null;
   type: ItemType;
-  observation?: string | null;
+  observation: string;
   active: boolean;
   amount?: number | null;
   breastSide?: BreastSide | null;

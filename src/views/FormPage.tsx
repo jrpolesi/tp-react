@@ -22,16 +22,10 @@ export function FormPage() {
 
   const formType = (searchParams.get("type") ?? "sleep") as ItemType;
 
-  const itemId = searchParams.get("id");
-
   const { title } = useItemForm(formType);
 
   async function onSubmit(value: FormValue) {
-    if (itemId) {
-      await api.updateItem({...value, id: itemId});
-    } else {
-      await api.createItem(value);
-    }
+    await api.createItem(value);
 
     open({
       content: t("formPage.submit.success", "Saved successfully"),

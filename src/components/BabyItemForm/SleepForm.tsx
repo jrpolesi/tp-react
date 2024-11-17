@@ -1,5 +1,5 @@
 import { BoxProps, Stack } from "@mui/material";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ApiError } from "../../errors";
@@ -34,10 +34,20 @@ type SleepFormProps = {
   sx?: BoxProps["sx"];
 };
 
-export function SleepForm({ onFormSubmit, ...props }: SleepFormProps) {
+export function SleepForm({
+  defaultValue,
+  onFormSubmit,
+  ...props
+}: SleepFormProps) {
   const { t } = useTranslation();
 
-  const form = useForm<FormFields>({});
+  const form = useForm<FormFields>({
+    defaultValues: {
+      ...defaultValue,
+      startDatetime: dayjs(defaultValue?.startDatetime),
+      endDatetime: dayjs(defaultValue?.endDatetime),
+    },
+  });
   const { control, formState, reset, watch } = form;
   const { errors } = formState;
 
@@ -77,7 +87,6 @@ export function SleepForm({ onFormSubmit, ...props }: SleepFormProps) {
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{

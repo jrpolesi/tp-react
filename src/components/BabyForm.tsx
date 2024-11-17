@@ -91,7 +91,6 @@ export function BabyForm({
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{

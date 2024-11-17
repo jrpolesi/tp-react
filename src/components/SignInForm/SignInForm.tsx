@@ -54,7 +54,6 @@ export function SignInForm({ onFormSubmit, ...props }: SignInFormProps) {
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{

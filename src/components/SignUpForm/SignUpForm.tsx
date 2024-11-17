@@ -86,7 +86,6 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{

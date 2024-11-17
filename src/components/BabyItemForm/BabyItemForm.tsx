@@ -12,7 +12,12 @@ type BabyItemFormProps = {
   sx?: BoxProps["sx"];
 };
 
-export function BabyItemForm({ formType, onSubmit, sx }: BabyItemFormProps) {
+export function BabyItemForm({
+  defaultValue,
+  formType,
+  onSubmit,
+  sx,
+}: BabyItemFormProps) {
   const form = useItemForm(formType);
 
   const { user } = useSessionContext();
@@ -23,6 +28,7 @@ export function BabyItemForm({ formType, onSubmit, sx }: BabyItemFormProps) {
   return (
     <form.component
       sx={sx}
+      defaultValue={defaultValue as any}
       onFormSubmit={async (value) => {
         onSubmit({
           type: formType,

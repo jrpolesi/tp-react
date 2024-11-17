@@ -5,7 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ApiError } from "../../errors";
@@ -48,13 +48,23 @@ type FeedFormProps = {
   sx?: BoxProps["sx"];
 };
 
-export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
+export function FeedForm({
+  defaultValue,
+  onFormSubmit,
+  ...props
+}: FeedFormProps) {
   const { t } = useTranslation();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const form = useForm<FormFields>({});
+  const form = useForm<FormFields>({
+    defaultValues: {
+      ...defaultValue,
+      startDatetime: dayjs(defaultValue?.startDatetime),
+      endDatetime: dayjs(defaultValue?.endDatetime),
+    },
+  });
   const { control, formState, reset, watch } = form;
   const { errors } = formState;
 
@@ -137,7 +147,6 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{

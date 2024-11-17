@@ -1,5 +1,5 @@
 import { BoxProps, Stack, useMediaQuery, useTheme } from "@mui/material";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ApiError } from "../../errors";
@@ -23,7 +23,7 @@ type FormFields = {
   submit: void;
   observation: string;
   startDatetime: Dayjs;
-  diaperStatus: DiaperStatus;
+  diaperStatus: DiaperStatus | null;
 };
 
 type FormSubmitValue = Omit<FormFields, "submit" | "startDatetime"> & {
@@ -37,13 +37,23 @@ type DiaperFormProps = {
   sx?: BoxProps["sx"];
 };
 
-export function DiaperForm({ onFormSubmit, ...props }: DiaperFormProps) {
+export function DiaperForm({
+  defaultValue,
+  onFormSubmit,
+  ...props
+}: DiaperFormProps) {
   const { t } = useTranslation();
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const form = useForm<FormFields>({});
+  console.log(defaultValue);
+  const form = useForm<FormFields>({
+    defaultValues: {
+      observation: defaultValue?.observation,
+      diaperStatus: defaultValue?.diaperStatus,
+      startDatetime: dayjs(defaultValue?.startDatetime),
+    },
+  });
   const { control, formState, reset } = form;
   const { errors } = formState;
 
@@ -99,7 +109,6 @@ export function DiaperForm({ onFormSubmit, ...props }: DiaperFormProps) {
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{
