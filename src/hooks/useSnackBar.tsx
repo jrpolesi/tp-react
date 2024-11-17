@@ -1,10 +1,6 @@
 import { useState } from "react";
 import { Alert, SnackBar } from "../components";
-
-type SnackBarMessage = {
-  content: string;
-  severity: "success" | "error" | "warning" | "info";
-};
+import { SnackBarMessage } from "../contexts";
 
 export function useSnackBar() {
   const [isOpen, setIsOpen] = useState(false);

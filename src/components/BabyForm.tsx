@@ -4,12 +4,12 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { ApiError } from "../errors";
 import { useHandleSubmit } from "../hooks";
+import { SubmitButton } from "./Shared";
 import {
   Alert,
   Box,
   ControlledDatePicker,
   ControlledTextField,
-  LoadingButton,
 } from "./Shared/MuiWrap";
 
 type FormFields = {
@@ -30,7 +30,7 @@ type FormSubmitValue = Omit<
 };
 
 type BabyFormProps = {
-  defaultValue: FormSubmitValue;
+  defaultValue?: FormSubmitValue;
   onFormSubmit: (value: FormSubmitValue) => Promise<void>;
 } & {
   sx?: BoxProps["sx"];
@@ -44,15 +44,17 @@ export function BabyForm({
   const { t } = useTranslation();
 
   const form = useForm<FormFields>({
-    defaultValues: {
-      babyName: defaultValue.babyName,
-      babyLength: defaultValue.babyLength.toString(),
-      babyWeight: defaultValue.babyWeight.toString(),
-      babyBirthdate: dayjs(defaultValue.babyBirthdate),
-    },
+    defaultValues: defaultValue
+      ? {
+          babyName: defaultValue.babyName,
+          babyLength: defaultValue.babyLength.toString(),
+          babyWeight: defaultValue.babyWeight.toString(),
+          babyBirthdate: dayjs(defaultValue.babyBirthdate),
+        }
+      : undefined,
   });
   const { control, formState, reset } = form;
-  const { errors, isLoading, isSubmitting, isDirty } = formState;
+  const { errors, isDirty } = formState;
 
   async function onSubmit(values: FormFields) {
     await onFormSubmit({
@@ -86,12 +88,9 @@ export function BabyForm({
     };
   });
 
-  const isFormLoading = isLoading || isSubmitting;
-
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{
@@ -197,23 +196,13 @@ export function BabyForm({
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
-      <LoadingButton
-        type="submit"
-        variant="contained"
-        loading={isFormLoading}
-        disabled={isFormLoading || !isDirty}
-        size="large"
-        sx={{
-          alignSelf: "flex-end",
-          textTransform: "none",
-        }}
-      >
+      <SubmitButton formState={formState}>
         {isDirty
           ? t("babyForm.submit.label", "Save")
           : t("babyForm.edit.label", "Edit")}
-      </LoadingButton>
+      </SubmitButton>
     </Box>
   );
 }

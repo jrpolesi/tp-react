@@ -60,6 +60,156 @@
       }
     }
   },
+  "diaperForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "diaperStatus": {
+      "options": {
+        "clean": {
+          "label": "Limpa"
+        },
+        "wet": {
+          "label": "Molhada"
+        },
+        "dirty": {
+          "label": "Suja"
+        },
+        "both": {
+          "label": "Ambos"
+        }
+      },
+      "errors": {
+        "required": "O estado da fralda é obrigatório"
+      },
+      "label": "Estado da fralda"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "A data é obrigatória"
+      },
+      "label": "Data"
+    },
+    "observation": {
+      "errors": {
+        "required": "A observação é obrigatória"
+      },
+      "label": "Observação"
+    }
+  },
+  "feedForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "feedingType": {
+      "options": {
+        "bottle": {
+          "label": "Mamadeira"
+        },
+        "breast": {
+          "label": "Seios"
+        }
+      },
+      "errors": {
+        "required": "O tipo de alimentação é obrigatório"
+      },
+      "label": "Tipo de alimentação"
+    },
+    "breastSide": {
+      "options": {
+        "left": {
+          "label": "Esquerdo"
+        },
+        "right": {
+          "label": "Direito"
+        },
+        "both": {
+          "label": "Ambos"
+        }
+      },
+      "errors": {
+        "required": "O lado do seio é obrigatório"
+      },
+      "label": "Lado do seio"
+    },
+    "amount": {
+      "errors": {
+        "required": "A quantidade é obrigatória",
+        "min": "A quantidade deve ser maior que 1",
+        "decimal": "A quantidade deve ser um número inteiro"
+      },
+      "label": "Quantidade"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "A data de início é obrigatória"
+      },
+      "label": "Data de início"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "A data de término é obrigatória",
+        "invalid": "A data de término deve ser após a data de início"
+      },
+      "label": "Data de término"
+    },
+    "observation": {
+      "errors": {
+        "required": "A observação é obrigatória"
+      },
+      "label": "Observação"
+    }
+  },
+  "sleepForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocorreu um erro inesperado",
+        "api": "Ocorreu um erro inesperado ao enviar o formulário"
+      },
+      "label": "Salvar"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "A data de início é obrigatória"
+      },
+      "label": "Data de início"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "A data de término é obrigatória",
+        "invalid": "A data de término deve ser após a data de início"
+      },
+      "label": "Data de término"
+    },
+    "observation": {
+      "errors": {
+        "required": "A observação é obrigatória"
+      },
+      "label": "Observação"
+    }
+  },
+  "useItemForm": {
+    "sleep": {
+      "title": "Sono"
+    },
+    "diaper": {
+      "title": "Fralda"
+    },
+    "eat": {
+      "title": "Alimentação"
+    }
+  },
+  "babyItemsList": {
+    "error": "Ocorreu um erro ao buscar os dados dos itens do bebê"
+  },
   "darkModeSwitch": {
     "label": "Selecionar tema",
     "light": {
@@ -95,6 +245,10 @@
     "portuguese": {
       "label": "Português"
     }
+  },
+  "confirmModal": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
   },
   "signInForm": {
     "submit": {
@@ -179,13 +333,67 @@
       "label": "Senha"
     }
   },
+  "babyItemTheme": {
+    "sleep": {
+      "title": "Sono"
+    },
+    "feed": {
+      "title": "Alimentação"
+    },
+    "diaper": {
+      "title": "Fralda"
+    }
+  },
   "dashboardPage": {
     "title": "Dashboard"
+  },
+  "formPage": {
+    "submit": {
+      "success": "Salvo com sucesso"
+    }
+  },
+  "formUpdatePage": {
+    "remove": {
+      "confirm": {
+        "title": "Excluir item",
+        "description": "Tem certeza de que deseja excluir este item?"
+      },
+      "submit": {
+        "success": "Removido com sucesso",
+        "error": "Ocorreu um erro ao remover o item"
+      }
+    },
+    "update": {
+      "submit": {
+        "success": "Salvo com sucesso"
+      }
+    },
+    "action": {
+      "delete": "Excluir"
+    }
+  },
+  "homePage": {
+    "profileFetch": {
+      "error": "Ocorreu um erro ao buscar os dados do perfil do bebê"
+    },
+    "babyActions": {
+      "action": {
+        "label": "Adicionar novo"
+      }
+    }
+  },
+  "notFoundPage": {
+    "title": "Página não encontrada",
+    "message": "A página que você está procurando pode ter sido removida, teve seu nome alterado ou está temporariamente indisponível.",
+    "backToHome": "Voltar para a página inicial"
   },
   "settingsPage": {
     "title": "Configurações",
     "siteSettings": {
       "title": "Configurações do site"
+    },
+    "profileFetch": {
+      "error": "Ocorreu um erro ao buscar os dados do perfil do bebê"
     },
     "babyInformation": {
       "title": "Informações do bebê",

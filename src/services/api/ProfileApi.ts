@@ -1,5 +1,6 @@
 import { ApiError } from "../../errors";
 import { Profile } from "../../types";
+import { Storage } from "../storage";
 import { Client } from "./Api";
 
 export class ProfileApi {
@@ -20,8 +21,7 @@ export class ProfileApi {
     if (res.error) {
       throw new ApiError(res.error.message, res.status ?? 0, "profile");
     }
-
-    return {
+    const profile = {
       id: res.data?.id,
       username: res.data?.username,
       babyName: res.data?.baby_name,
@@ -29,6 +29,9 @@ export class ProfileApi {
       babyLength: res.data?.baby_length,
       babyBirthdate: new Date(res.data?.baby_birthdate),
     };
+
+    Storage.setProfile(profile);
+    return profile;
   }
 
   async updateProfile(profile: Profile) {
@@ -56,8 +59,7 @@ export class ProfileApi {
       .on(
         "postgres_changes",
         { event: "UPDATE", schema: "public", table: "profiles" },
-        (payload) => {
-          console.log("Change received!", payload);
+        () => {
           callback();
         }
       )

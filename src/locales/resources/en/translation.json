@@ -58,6 +58,156 @@
       }
     }
   },
+  "diaperForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "diaperStatus": {
+      "options": {
+        "clean": {
+          "label": "Clean"
+        },
+        "wet": {
+          "label": "Wet"
+        },
+        "dirty": {
+          "label": "Dirty"
+        },
+        "both": {
+          "label": "Both"
+        }
+      },
+      "errors": {
+        "required": "Diaper state is required"
+      },
+      "label": "Diaper state"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "Date is required"
+      },
+      "label": "Date"
+    },
+    "observation": {
+      "errors": {
+        "required": "Observation is required"
+      },
+      "label": "Observation"
+    }
+  },
+  "feedForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "feedingType": {
+      "options": {
+        "bottle": {
+          "label": "Bottle"
+        },
+        "breast": {
+          "label": "Breast"
+        }
+      },
+      "errors": {
+        "required": "Feeding type is required"
+      },
+      "label": "Feeding type"
+    },
+    "breastSide": {
+      "options": {
+        "left": {
+          "label": "Left"
+        },
+        "right": {
+          "label": "Right"
+        },
+        "both": {
+          "label": "Both"
+        }
+      },
+      "errors": {
+        "required": "Breast side is required"
+      },
+      "label": "Breast side"
+    },
+    "amount": {
+      "errors": {
+        "required": "Amount is required",
+        "min": "Amount must be greater than 1",
+        "decimal": "Amount must be an integer"
+      },
+      "label": "Amount"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "Start date is required"
+      },
+      "label": "Start date"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "End date is required",
+        "invalid": "End date must be after start date"
+      },
+      "label": "End date"
+    },
+    "observation": {
+      "errors": {
+        "required": "Observation is required"
+      },
+      "label": "Observation"
+    }
+  },
+  "sleepForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Some unexpected error occurred",
+        "api": "Some unexpected error occurred while submitting the form"
+      },
+      "label": "Save"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "Start date is required"
+      },
+      "label": "Start date"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "End date is required",
+        "invalid": "End date must be after start date"
+      },
+      "label": "End date"
+    },
+    "observation": {
+      "errors": {
+        "required": "Observation is required"
+      },
+      "label": "Observation"
+    }
+  },
+  "useItemForm": {
+    "sleep": {
+      "title": "Sleep"
+    },
+    "diaper": {
+      "title": "Diaper"
+    },
+    "eat": {
+      "title": "Eat"
+    }
+  },
+  "babyItemsList": {
+    "error": "An error occurred while fetching baby items data"
+  },
   "darkModeSwitch": {
     "label": "Select theme",
     "light": {
@@ -93,6 +243,10 @@
     "portuguese": {
       "label": "Portuguese"
     }
+  },
+  "confirmModal": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
   },
   "signInForm": {
     "submit": {
@@ -177,13 +331,67 @@
       "label": "Password"
     }
   },
+  "babyItemTheme": {
+    "sleep": {
+      "title": "Sleep"
+    },
+    "feed": {
+      "title": "Feed"
+    },
+    "diaper": {
+      "title": "Diaper"
+    }
+  },
   "dashboardPage": {
     "title": "Dashboard"
+  },
+  "formPage": {
+    "submit": {
+      "success": "Saved successfully"
+    }
+  },
+  "formUpdatePage": {
+    "remove": {
+      "confirm": {
+        "title": "Delete item",
+        "description": "Are you sure you want to delete this item?"
+      },
+      "submit": {
+        "success": "Removed successfully",
+        "error": "An error occurred while removing the item"
+      }
+    },
+    "update": {
+      "submit": {
+        "success": "Saved successfully"
+      }
+    },
+    "action": {
+      "delete": "Delete"
+    }
+  },
+  "homePage": {
+    "profileFetch": {
+      "error": "An error occurred while fetching baby profile data"
+    },
+    "babyActions": {
+      "action": {
+        "label": "Add new"
+      }
+    }
+  },
+  "notFoundPage": {
+    "title": "Page not found",
+    "message": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "backToHome": "Back to home"
   },
   "settingsPage": {
     "title": "Settings",
     "siteSettings": {
       "title": "Site settings"
+    },
+    "profileFetch": {
+      "error": "An error occurred while fetching baby profile data"
     },
     "babyInformation": {
       "title": "Baby information",

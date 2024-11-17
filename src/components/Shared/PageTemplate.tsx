@@ -6,6 +6,7 @@ import { Box, Container } from "./MuiWrap";
 type PageTemplateProps = PropsWithChildren<{
   title?: string;
   withAppBar?: boolean;
+  action?: React.ReactNode;
   sx?: BoxProps["sx"];
 }>;
 
@@ -13,6 +14,7 @@ export function PageTemplate({
   title,
   withAppBar,
   children,
+  action,
   sx,
 }: PageTemplateProps) {
   return (
@@ -22,7 +24,7 @@ export function PageTemplate({
         ...sx,
       }}
     >
-      {withAppBar && <AppBar title={title ?? ""} />}
+      {withAppBar && <AppBar title={title ?? ""} action={action} />}
 
       <Container>{children}</Container>
     </Box>

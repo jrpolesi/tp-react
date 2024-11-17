@@ -2,15 +2,15 @@ import { BoxProps, InputAdornment, Stack } from "@mui/material";
 import dayjs, { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ApiError } from "../../errors";
-import { useHandleSubmit } from "../../hooks";
+import { ApiError } from "../errors";
+import { useHandleSubmit } from "../hooks";
 import {
   Alert,
   Box,
   ControlledDatePicker,
   ControlledTextField,
-  LoadingButton,
-} from "../Shared";
+  SubmitButton,
+} from "./Shared";
 
 type FormFields = {
   submit: void;
@@ -53,7 +53,7 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
     },
   });
   const { control, formState } = form;
-  const { errors, isLoading, isSubmitting } = formState;
+  const { errors } = formState;
 
   async function onSubmit(values: FormFields) {
     await onFormSubmit({
@@ -83,12 +83,9 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
     };
   });
 
-  const isFormLoading = isLoading || isSubmitting;
-
   return (
     <Box
       component="form"
-      autoComplete="off"
       noValidate
       onSubmit={handleSubmit}
       sx={{
@@ -255,20 +252,11 @@ export function SignUpForm({ onFormSubmit, ...props }: SignUpFormProps) {
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
-      <LoadingButton
-        type="submit"
-        variant="contained"
-        loading={isFormLoading}
-        disabled={isFormLoading}
-        size="large"
-        sx={{
-          alignSelf: "flex-end",
-        }}
-      >
+      <SubmitButton formState={formState}>
         {t("signUpForm.submit.label", "Sign Up")}
-      </LoadingButton>
+      </SubmitButton>
     </Box>
   );
 }
