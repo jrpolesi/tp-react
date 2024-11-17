@@ -164,7 +164,7 @@ export function DiaperForm({
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
       <SubmitButton formState={formState}>
         {t("diaperForm.submit.label", "Save")}

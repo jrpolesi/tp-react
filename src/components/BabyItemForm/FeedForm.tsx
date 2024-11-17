@@ -280,7 +280,7 @@ export function FeedForm({
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
       <SubmitButton formState={formState}>
         {t("feedForm.submit.label", "Save")}

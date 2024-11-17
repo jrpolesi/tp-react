@@ -28,6 +28,19 @@ export function FormUpdatePage() {
 
   const api = useItemApi();
 
+  const {
+    confirmModal,
+    open: openModal,
+    close: closeModal,
+  } = useConfirmModal({
+    title: t("formUpdatePage.remove.confirm.title", "Delete item"),
+    description: t(
+      "formUpdatePage.remove.confirm.description",
+      "Are you sure you want to delete this item?"
+    ),
+    onConfirm: () => handleDelete(itemId ?? ""),
+  });
+
   async function onSubmit(itemId: string, value: FormValue) {
     await api.updateItem({ ...value, id: itemId });
 
@@ -41,28 +54,31 @@ export function FormUpdatePage() {
 
   async function handleDelete(itemId: string) {
     setIsDeleteLoading(true);
-    await api.deleteItem(itemId);
+    try {
+      await api.deleteItem(itemId);
 
-    open({
-      content: t(
-        "formUpdatePage.remove.submit.success",
-        "Removed successfully"
-      ),
-      severity: "success",
-    });
+      open({
+        content: t(
+          "formUpdatePage.remove.submit.success",
+          "Removed successfully"
+        ),
+        severity: "success",
+      });
 
-    setIsDeleteLoading(false);
-    navigate("/");
+      navigate("/");
+    } catch (error) {
+      open({
+        content: t(
+          "formUpdatePage.remove.submit.error",
+          "An error occurred while removing the item"
+        ),
+        severity: "error",
+      });
+    } finally {
+      setIsDeleteLoading(false);
+      closeModal();
+    }
   }
-
-  const { confirmModal, open: openModal } = useConfirmModal({
-    title: t("formUpdatePage.remove.confirm.title", "Delete item"),
-    description: t(
-      "formUpdatePage.remove.confirm.description",
-      "Are you sure you want to delete this item?"
-    ),
-    onConfirm: () => handleDelete(itemId ?? ""),
-  });
 
   if (!itemId) {
     throw new Error("Item ID is required in this route");

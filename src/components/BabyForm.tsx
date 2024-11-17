@@ -196,7 +196,7 @@ export function BabyForm({
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
       <SubmitButton formState={formState}>
         {isDirty

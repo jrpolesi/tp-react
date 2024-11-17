@@ -37,7 +37,7 @@ export function SettingsPage() {
             <DarkModeSwitch />
           </SettingsSection>
 
-          {!!error && (
+          {!!error && !data && (
             <Alert severity="error" sx={{ marginTop: "1rem" }}>
               {t(
                 "settingsPage.profileFetch.error",

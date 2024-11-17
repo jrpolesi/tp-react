@@ -35,7 +35,7 @@ export function HomePage() {
             },
           }}
         >
-          {!!error && (
+          {!!error && !data && (
             <Box
               sx={{
                 display: "flex",

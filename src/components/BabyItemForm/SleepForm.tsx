@@ -150,7 +150,7 @@ export function SleepForm({
         />
       </Stack>
 
-      {errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
+      {!!errors.submit && <Alert severity="error">{errors.submit.message}</Alert>}
 
       <SubmitButton formState={formState}>
         {t("sleepForm.submit.label", "Save")}

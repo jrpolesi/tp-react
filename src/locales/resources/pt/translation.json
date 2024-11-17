@@ -207,6 +207,9 @@
       "title": "Alimentação"
     }
   },
+  "babyItemsList": {
+    "error": "Ocorreu um erro ao buscar os dados dos itens do bebê"
+  },
   "darkModeSwitch": {
     "label": "Selecionar tema",
     "light": {
@@ -350,18 +353,19 @@
     }
   },
   "formUpdatePage": {
-    "update": {
-      "submit": {
-        "success": "Salvo com sucesso"
-      }
-    },
     "remove": {
-      "submit": {
-        "success": "Removido com sucesso"
-      },
       "confirm": {
         "title": "Excluir item",
         "description": "Tem certeza de que deseja excluir este item?"
+      },
+      "submit": {
+        "success": "Removido com sucesso",
+        "error": "Ocorreu um erro ao remover o item"
+      }
+    },
+    "update": {
+      "submit": {
+        "success": "Salvo com sucesso"
       }
     },
     "action": {
@@ -369,6 +373,9 @@
     }
   },
   "homePage": {
+    "profileFetch": {
+      "error": "Ocorreu um erro ao buscar os dados do perfil do bebê"
+    },
     "babyActions": {
       "action": {
         "label": "Adicionar novo"
@@ -384,6 +391,9 @@
     "title": "Configurações",
     "siteSettings": {
       "title": "Configurações do site"
+    },
+    "profileFetch": {
+      "error": "Ocorreu um erro ao buscar os dados do perfil do bebê"
     },
     "babyInformation": {
       "title": "Informações do bebê",

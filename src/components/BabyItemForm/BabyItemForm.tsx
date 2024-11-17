@@ -30,7 +30,7 @@ export function BabyItemForm({
       sx={sx}
       defaultValue={defaultValue as any}
       onFormSubmit={async (value) => {
-        onSubmit({
+       await onSubmit({
           type: formType,
           userId: user.id,
           active: true,
