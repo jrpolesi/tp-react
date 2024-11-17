@@ -1,12 +1,24 @@
-import { FormControl, FormLabel, Stack, useColorScheme } from "@mui/material";
+import {
+  FormControl,
+  FormLabel,
+  Stack,
+  useColorScheme,
+  useMediaQuery,
+} from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { Storage } from "../services";
 import { Switch, Typography } from "./Shared/MuiWrap";
 
 export function DarkModeSwitch() {
   const { t } = useTranslation();
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const { mode, setMode } = useColorScheme();
+
+  let currentMode = mode;
+  if (mode === "system") {
+    currentMode = prefersDarkMode ? "dark" : "light";
+  }
 
   return (
     <FormControl
@@ -23,7 +35,7 @@ export function DarkModeSwitch() {
       <Stack direction="row" spacing={1} alignItems="center">
         <Typography>{t("darkModeSwitch.light.label", "Light")}</Typography>
         <Switch
-          checked={mode === "dark"}
+          checked={currentMode === "dark"}
           onChange={(e) => {
             Storage.setTheme(e.currentTarget.checked ? "dark" : "light");
             setMode(e.currentTarget.checked ? "dark" : "light");
