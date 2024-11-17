@@ -34,19 +34,40 @@ export function BabyCardAvatar({ name, birthdate, ...props }: BabyAvatarProps) {
     <Stack alignItems="center" gap=".9rem">
       <Avatar src={baby} {...props} />
 
-      <Stack alignItems="center" gap=".25rem">
+      <Stack
+        alignItems="center"
+        gap={{
+          xs: ".2rem",
+          sm: ".25rem",
+        }}
+      >
         <Typography
           sx={{
             textAlign: "center",
-            fontSize: "1.5rem",
-            fontWeight: "500",
+            fontSize: {
+              xs: "1rem",
+              sm: "1.5rem",
+            },
+            fontWeight: {
+              xs: "600",
+              sm: "500",
+            },
             lineHeight: "1",
           }}
         >
           {name}
         </Typography>
 
-        <Typography>{ageMessage}</Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: ".9rem",
+              sm: "1rem",
+            },
+          }}
+        >
+          {ageMessage}
+        </Typography>
       </Stack>
     </Stack>
   );

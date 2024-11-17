@@ -13,7 +13,7 @@ export class ItemApi {
     this.client = client;
   }
 
-  async getItems(userId: string, limit = 10, offset = 0): Promise<Item[]> {
+  async getItems(userId: string, from = 0, to = 9): Promise<Item[]> {
     const res = await this.client
       .schema("public")
       .from("items")
@@ -21,7 +21,7 @@ export class ItemApi {
       .filter("active", "eq", true)
       .filter("user_id", "eq", userId)
       .order("created_at", { ascending: false })
-      .range(offset, offset + limit);
+      .range(from, to);
 
     if (res.error) {
       throw new ApiError(res.error.message, res.status ?? 0, "items");
@@ -138,7 +138,7 @@ export class ItemApi {
         "postgres_changes",
         { event: "*", schema: "public", table: "items" },
         (payload) => {
-          console.log("Change received!", payload);
+          console.log(payload);
           callback();
         }
       )

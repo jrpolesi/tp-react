@@ -3,6 +3,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   ToggleButtonGroupProps,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import {
@@ -44,7 +45,8 @@ export function ControlledToggleButtonGroup<
   sx,
   toggleButtonGroupProps,
 }: ControlledToggleButtonGroupProps<TFieldValues, TName>) {
-  const { palette } = useTheme();
+  const { palette, breakpoints } = useTheme();
+  const isMobile = useMediaQuery(breakpoints.down("sm"));
 
   const {
     field,
@@ -81,6 +83,7 @@ export function ControlledToggleButtonGroup<
           fullWidth
           exclusive
           color="primary"
+          size={isMobile ? "small" : "medium"}
           {...field}
           {...toggleButtonGroupProps}
         >

@@ -22,7 +22,7 @@ export function ActionCard({ action, sx }: ActionCardProps) {
       sx={{
         position: "relative",
         gap: {
-          xs: "1.5rem",
+          xs: "1.25rem",
           sm: ".75rem",
         },
         padding: {
@@ -41,11 +41,16 @@ export function ActionCard({ action, sx }: ActionCardProps) {
         }}
       />
 
-      <Stack alignItems="center" gap=".4rem">
+      <Stack alignItems={{ sm: "center" }} gap=".4rem">
         <Typography
           sx={{
-            textAlign: "center",
-            fontSize: "1.1rem",
+            textAlign: {
+              sm: "center",
+            },
+            fontSize: {
+              xs: "1rem",
+              sm: "1.1rem",
+            },
             fontWeight: "bold",
             lineHeight: "1",
           }}
@@ -54,7 +59,9 @@ export function ActionCard({ action, sx }: ActionCardProps) {
         </Typography>
         <Typography
           sx={{
-            textAlign: "center",
+            textAlign: {
+              sm: "center",
+            },
             fontSize: ".9rem",
             lineHeight: "1",
             color: "text.secondary",

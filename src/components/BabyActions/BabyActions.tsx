@@ -1,4 +1,4 @@
-import { Stack, SvgIconTypeMap } from "@mui/material";
+import { Stack, StackProps, SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
 import { ActionCard } from "./ActionCard";
 
@@ -14,9 +14,10 @@ export type Action = {
 
 type BabyActionsProps = {
   actions: Action[];
+  sx?: StackProps["sx"];
 };
 
-export function BabyActions({ actions }: BabyActionsProps) {
+export function BabyActions({ actions, sx }: BabyActionsProps) {
   return (
     <Stack
       flexDirection={{
@@ -29,7 +30,11 @@ export function BabyActions({ actions }: BabyActionsProps) {
       }}
       justifyContent="center"
       flexWrap="wrap"
-      gap={3}
+      gap={{
+        xs: 1.5,
+        sm: 3,
+      }}
+      sx={sx}
     >
       {actions.map((action) => {
         return (

@@ -17,15 +17,27 @@ export function CardWithIcon({ icon, title, description }: CardWithIconProps) {
         <Typography
           sx={{
             textAlign: "center",
-            fontSize: "1rem",
+            fontSize: {
+              xs: ".8rem",
+              sm: "1rem",
+            },
             fontWeight: "bold",
-            lineHeight: "1"
+            lineHeight: "1",
           }}
         >
           {title}
         </Typography>
 
-        <Typography>{description}</Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              xs: ".9rem",
+              sm: "1rem",
+            },
+          }}
+        >
+          {description}
+        </Typography>
       </Stack>
     </Stack>
   );

@@ -1,4 +1,10 @@
-import { BoxProps, InputAdornment, Stack } from "@mui/material";
+import {
+  BoxProps,
+  InputAdornment,
+  Stack,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -45,6 +51,9 @@ type FeedFormProps = {
 export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
   const { t } = useTranslation();
 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   const form = useForm<FormFields>({});
   const { control, formState, reset, watch } = form;
   const { errors } = formState;
@@ -82,13 +91,13 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
 
   const handleSubmit = useHandleSubmit(form, onSubmit, (error) => {
     let message = t(
-      "diaperForm.submit.errors.unknown",
+      "feedForm.submit.errors.unknown",
       "Some unexpected error occurred"
     );
 
     if (error instanceof ApiError) {
       message = t(
-        "diaperForm.submit.errors.api",
+        "feedForm.submit.errors.api",
         "Some unexpected error occurred while submitting the form"
       );
     }
@@ -166,6 +175,9 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
               ),
             }}
             label={t("feedForm.breastSide.label", "Breast side")}
+            toggleButtonGroupProps={{
+              orientation: isMobile ? "vertical" : "horizontal",
+            }}
           />
         )}
 
@@ -210,11 +222,11 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
           control={control}
           rules={{
             required: t(
-              "sleepForm.startDatetime.errors.required",
+              "feedForm.startDatetime.errors.required",
               "Start date is required"
             ),
           }}
-          label={t("sleepForm.startDatetime.label", "Start date")}
+          label={t("feedForm.startDatetime.label", "Start date")}
         />
 
         {isBreastFeeding && (
@@ -223,13 +235,13 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
             control={control}
             rules={{
               required: t(
-                "sleepForm.endDatetime.errors.required",
+                "feedForm.endDatetime.errors.required",
                 "End date is required"
               ),
               validate: (value) => {
                 if (startDatetime && value?.isBefore(startDatetime)) {
                   return t(
-                    "sleepForm.endDatetime.errors.invalid",
+                    "feedForm.endDatetime.errors.invalid",
                     "End date must be after start date"
                   );
                 }
@@ -237,7 +249,7 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
                 return true;
               },
             }}
-            label={t("sleepForm.endDatetime.label", "End date")}
+            label={t("feedForm.endDatetime.label", "End date")}
           />
         )}
 
@@ -248,11 +260,11 @@ export function FeedForm({ onFormSubmit, ...props }: FeedFormProps) {
           rows={4}
           rules={{
             required: t(
-              "sleepForm.observation.errors.required",
+              "feedForm.observation.errors.required",
               "Observation is required"
             ),
           }}
-          label={t("sleepForm.observation.label", "Observation")}
+          label={t("feedForm.observation.label", "Observation")}
         />
       </Stack>
 

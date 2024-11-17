@@ -1,61 +1,73 @@
-import { useEffect, useState } from "react";
-import { useSessionContext } from "../../contexts";
+import { useEffect, useRef, useState } from "react";
 import { Item } from "../../types";
 import { useItemApi } from "../api";
 
-export function useItemsData() {
+const PAGE_LIMIT = 10;
+
+export function useItemsData(userId: string) {
   const [items, setItems] = useState<Item[] | undefined>();
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<unknown | null>(null);
   const [pagination, setPagination] = useState({
-    offset: 0,
-    limit: 10,
+    from: 0,
+    to: PAGE_LIMIT - 1,
   });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const hasMoreRef = useRef(true);
+  const isLoadingRef = useRef(false);
 
   const api = useItemApi();
-  const { user } = useSessionContext();
 
   useEffect(() => {
     async function fetchProfile() {
-      setIsLoading(true);
+      updateIsLoading(true);
 
       try {
-        if (!user) {
-          throw new Error("User is not logged in");
-        }
+        const data = await api.getItems(userId, pagination.from, pagination.to);
 
-        const data = await api.getItems(
-          user.id,
-          pagination.limit,
-          pagination.offset
-        );
-        setItems(data);
+        handleNewData(data);
       } catch (error) {
         setError(error);
       } finally {
-        setIsLoading(false);
+        updateIsLoading(false);
       }
     }
 
     fetchProfile();
+  }, [pagination.to, pagination.from]);
 
-    const subscription = api.subscribeToItems(fetchProfile);
+  function handleNewData(data: Item[]) {
+    if (data.length < PAGE_LIMIT) {
+      hasMoreRef.current = false;
+    }
 
-    return () => {
-      subscription.unsubscribe();
-    };
-  }, [pagination.limit, pagination.offset]);
+    setItems((prev) => {
+      if (prev && prev.at(-1)?.id === data.at(-1)?.id) return prev;
+
+      return [...(prev ?? []), ...data];
+    });
+  }
+
+  function updateIsLoading(value: boolean) {
+    isLoadingRef.current = value;
+    setIsLoading(value);
+  }
 
   function fetchNextPage() {
-    setPagination((prev) => ({
-      ...prev,
-      offset: prev.offset + prev.limit,
-    }));
+    setPagination((prev) => {
+      if (!hasMoreRef.current || isLoadingRef.current) return prev;
+
+      return {
+        ...prev,
+        from: prev.to + 1,
+        to: prev.to + PAGE_LIMIT,
+      };
+    });
   }
 
   return {
     data: items,
-    isLoading,
+    isLoading: isLoading,
     error,
     pagination: pagination,
     fetchNextPage,

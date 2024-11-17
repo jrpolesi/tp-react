@@ -1,5 +1,8 @@
+import { Profile } from "../../types";
+
 export const STORAGE_KEYS = {
-  user: "@baby.user_id",
+  userId: "@baby.user_id",
+  profile: "@baby.profile",
   language: "@baby.language",
   theme: "@baby.theme",
 } as const;
@@ -19,20 +22,45 @@ export class Storage {
     return jsonValue ? JSON.parse(jsonValue) : null;
   }
 
-  public static getUser() {
-    return this.getItem<string>(STORAGE_KEYS.user);
+  public static getUserId() {
+    return this.getItem<string>(STORAGE_KEYS.userId);
   }
 
-  public static setUser(userId: string | null) {
+  public static setUserId(userId: string | null) {
     if (!userId) {
       return this.removeUser();
     }
 
-    this.setItem(STORAGE_KEYS.user, userId);
+    this.setItem(STORAGE_KEYS.userId, userId);
   }
 
   public static removeUser() {
-    localStorage.removeItem(STORAGE_KEYS.user);
+    localStorage.removeItem(STORAGE_KEYS.userId);
+  }
+
+  public static getProfile() {
+    const profile = this.getItem<Profile>(STORAGE_KEYS.profile);
+
+    if (!profile) {
+      return null;
+    }
+
+    return {
+      ...profile,
+      babyBirthdate: new Date(profile.babyBirthdate),
+    };
+  }
+
+  public static setProfile(profile: Profile | null) {
+    if (!profile) {
+      return this.removeUser();
+    }
+
+    this.setItem(STORAGE_KEYS.profile, profile);
+  }
+
+  public static removeProfile() {
+    localStorage.removeItem(STORAGE_KEYS.profile);
   }
 
   public static getLanguage() {

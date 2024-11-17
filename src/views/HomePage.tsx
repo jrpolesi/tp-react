@@ -1,6 +1,3 @@
-import BabyChangingStationIcon from "@mui/icons-material/BabyChangingStation";
-import BedtimeIcon from "@mui/icons-material/Bedtime";
-import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
@@ -12,7 +9,7 @@ import {
   Container,
   FabMenu,
 } from "../components";
-import { useProfileData } from "../hooks";
+import { useProfileData, useThemeByItemType } from "../hooks";
 
 export function HomePage() {
   const { data, isLoading } = useProfileData();
@@ -30,10 +27,19 @@ export function HomePage() {
       <Container>
         <Box
           sx={{
-            marginTop: "2.5rem",
+            marginTop: {
+              xs: "1.8rem",
+              sm: "2.5rem",
+            },
           }}
         >
-          {!data && isLoading && <CentralizedSpinner />}
+          {!data && isLoading && (
+            <CentralizedSpinner
+              sx={{
+                minHeight: { xs: "9.5rem", sm: "14rem" },
+              }}
+            />
+          )}
           {data && <BabyInfo profile={data} />}
         </Box>
       </Container>
@@ -41,17 +47,31 @@ export function HomePage() {
       <Box
         sx={{
           flex: "1",
-          marginTop: "5.5rem",
+          marginTop: {
+            xs: "4rem",
+            sm: "5.5rem",
+          },
           padding: "1rem 0 4rem",
           backgroundColor: "primary.main",
         }}
       >
         <Container
           sx={{
-            marginTop: "-4rem",
+            marginTop: {
+              xs: "-3rem",
+              sm: "-4rem",
+            },
           }}
         >
-          <BabyActions actions={actions} />
+          <BabyActions
+            actions={actions}
+            sx={{
+              marginBottom: {
+                xs: "2rem",
+                sm: "3.5rem",
+              },
+            }}
+          />
 
           <BabyItemsList />
         </Container>
@@ -64,27 +84,27 @@ export function HomePage() {
 function useBabyActions(): Action[] {
   const { t } = useTranslation();
 
+  const sleepTheme = useThemeByItemType("sleep");
+  const eatTheme = useThemeByItemType("eat");
+  const diaperTheme = useThemeByItemType("diaper");
+
+  const actionLabel = t("homePage.babyActions.action.label", "Add new");
+
   return [
     {
-      Icon: BedtimeIcon,
-      title: t("homePage.babyActions.sleep.title", "Sleep"),
-      label: t("homePage.babyActions.sleep.label", "Add new"),
       to: "/form?type=sleep",
-      color: "purple",
+      label: actionLabel,
+      ...sleepTheme,
     },
     {
-      Icon: RestaurantMenuIcon,
-      title: t("homePage.babyActions.feed.title", "Feed"),
-      label: t("homePage.babyActions.feed.label", "Add new"),
       to: "/form?type=eat",
-      color: "green",
+      label: actionLabel,
+      ...eatTheme,
     },
     {
-      Icon: BabyChangingStationIcon,
-      title: t("homePage.babyActions.diaper.title", "Diaper"),
-      label: t("homePage.babyActions.diaper.label", "Add new"),
       to: "/form?type=diaper",
-      color: "salmon",
+      label: actionLabel,
+      ...diaperTheme,
     },
   ];
 }

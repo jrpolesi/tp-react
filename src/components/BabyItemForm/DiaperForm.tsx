@@ -1,4 +1,4 @@
-import { BoxProps, Stack } from "@mui/material";
+import { BoxProps, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -39,6 +39,9 @@ type DiaperFormProps = {
 
 export function DiaperForm({ onFormSubmit, ...props }: DiaperFormProps) {
   const { t } = useTranslation();
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const form = useForm<FormFields>({});
   const { control, formState, reset } = form;
@@ -119,6 +122,9 @@ export function DiaperForm({ onFormSubmit, ...props }: DiaperFormProps) {
             ),
           }}
           label={t("diaperForm.diaperStatus.label", "Diaper state")}
+          toggleButtonGroupProps={{
+            orientation: isMobile ? "vertical" : "horizontal",
+          }}
         />
 
         <ControlledDateTimePicker

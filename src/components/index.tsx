@@ -1,6 +1,7 @@
 export * from "./BabyActions";
 export * from "./BabyForm";
 export * from "./BabyInfo";
+export * from "./BabyItemForm";
 export * from "./BabyItemsList";
 export * from "./DarkModeSwitch";
 export * from "./FabMenu";
