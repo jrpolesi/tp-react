@@ -1,7 +1,7 @@
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import {
   BabyItemForm,
   CentralizedSpinner,
@@ -21,7 +21,7 @@ export function FormUpdatePage() {
   const navigate = useNavigate();
   const { itemId } = useParams();
 
-  const { data, isLoading } = useItemData(itemId);
+  const { data, isLoading, error } = useItemData(itemId);
   const { title } = useItemForm(data?.type ?? "sleep");
 
   const { open } = useSnackBarContext();
@@ -32,7 +32,7 @@ export function FormUpdatePage() {
     await api.updateItem({ ...value, id: itemId });
 
     open({
-      content: t("formUpdatePage.submit.success", "Saved successfully"),
+      content: t("formUpdatePage.update.submit.success", "Saved successfully"),
       severity: "success",
     });
 
@@ -44,7 +44,10 @@ export function FormUpdatePage() {
     await api.deleteItem(itemId);
 
     open({
-      content: t("formUpdatePage.submit.success", "Removed successfully"),
+      content: t(
+        "formUpdatePage.remove.submit.success",
+        "Removed successfully"
+      ),
       severity: "success",
     });
 
@@ -54,6 +57,10 @@ export function FormUpdatePage() {
 
   if (!itemId) {
     throw new Error("Item ID is required in this route");
+  }
+
+  if (error) {
+    return <Navigate to="/not-found" />;
   }
 
   return (
