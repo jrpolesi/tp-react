@@ -1,5 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useSessionContext } from "../shared";
+import { useSessionContext } from "../contexts";
 
 export function PublicRoute() {
   const { session } = useSessionContext();

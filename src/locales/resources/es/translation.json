@@ -1,0 +1,421 @@
+{
+  "babyForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocurrió un error inesperado",
+        "api": "Ocurrió un error inesperado al enviar el formulario"
+      },
+      "label": "Guardar"
+    },
+    "babyName": {
+      "errors": {
+        "required": "El nombre del bebé es obligatorio"
+      },
+      "label": "Nombre"
+    },
+    "babyBirthDate": {
+      "errors": {
+        "required": "La fecha de nacimiento del bebé es obligatoria",
+        "future": "La fecha de nacimiento del bebé no puede estar en el futuro"
+      },
+      "label": "Fecha de nacimiento"
+    },
+    "babyLength": {
+      "errors": {
+        "required": "La longitud del bebé es obligatoria",
+        "min": "La longitud del bebé debe ser mayor que 1",
+        "decimal": "La longitud del bebé debe ser un número entero"
+      },
+      "label": "Longitud"
+    },
+    "babyWeight": {
+      "errors": {
+        "required": "El peso del bebé es obligatorio",
+        "min": "El peso del bebé debe ser mayor que 1"
+      },
+      "label": "Peso"
+    },
+    "edit": {
+      "label": "Editar"
+    }
+  },
+  "babyInfo": {
+    "baby": {
+      "age": {
+        "days_one": "{{days}} días",
+        "days_many": "{{days}} días",
+        "days_other": "{{days}} días",
+        "years_one": "{{years}} años y",
+        "years_many": "{{years}} años y",
+        "years_other": "{{years}} años y",
+        "days_zero": "cero días"
+      },
+      "length": {
+        "label": "Longitud",
+        "value": "{{length}} cm"
+      },
+      "weight": {
+        "label": "Peso",
+        "value": "{{weight}} kg"
+      }
+    }
+  },
+  "diaperForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocurrió un error inesperado",
+        "api": "Ocurrió un error inesperado al enviar el formulario"
+      },
+      "label": "Guardar"
+    },
+    "diaperStatus": {
+      "options": {
+        "clean": {
+          "label": "Limpio"
+        },
+        "wet": {
+          "label": "Mojado"
+        },
+        "dirty": {
+          "label": "Sucio"
+        },
+        "both": {
+          "label": "Ambos"
+        }
+      },
+      "errors": {
+        "required": "El estado del pañal es obligatorio"
+      },
+      "label": "Estado del pañal"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "La fecha es obligatoria"
+      },
+      "label": "Fecha"
+    },
+    "observation": {
+      "errors": {
+        "required": "La observación es obligatoria"
+      },
+      "label": "Observación"
+    }
+  },
+  "feedForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocurrió un error inesperado",
+        "api": "Ocurrió un error inesperado al enviar el formulario"
+      },
+      "label": "Guardar"
+    },
+    "feedingType": {
+      "options": {
+        "bottle": {
+          "label": "Biberón"
+        },
+        "breast": {
+          "label": "Pecho"
+        }
+      },
+      "errors": {
+        "required": "El tipo de alimentación es obligatorio"
+      },
+      "label": "Tipo de alimentación"
+    },
+    "breastSide": {
+      "options": {
+        "left": {
+          "label": "Izquierda"
+        },
+        "right": {
+          "label": "Derecha"
+        },
+        "both": {
+          "label": "Ambos"
+        }
+      },
+      "errors": {
+        "required": "El lado del pecho es obligatorio"
+      },
+      "label": "Lado del pecho"
+    },
+    "amount": {
+      "errors": {
+        "required": "La cantidad es obligatoria",
+        "min": "La cantidad debe ser mayor que 1",
+        "decimal": "La cantidad debe ser un número entero"
+      },
+      "label": "Cantidad"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "La fecha de inicio es obligatoria"
+      },
+      "label": "Fecha de inicio"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "La fecha de finalización es obligatoria",
+        "invalid": "La fecha de finalización debe ser posterior a la fecha de inicio"
+      },
+      "label": "Fecha de finalización"
+    },
+    "observation": {
+      "errors": {
+        "required": "La observación es obligatoria"
+      },
+      "label": "Observación"
+    }
+  },
+  "sleepForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocurrió un error inesperado",
+        "api": "Ocurrió un error inesperado al enviar el formulario"
+      },
+      "label": "Guardar"
+    },
+    "startDatetime": {
+      "errors": {
+        "required": "La fecha de inicio es obligatoria"
+      },
+      "label": "Fecha de inicio"
+    },
+    "endDatetime": {
+      "errors": {
+        "required": "La fecha de finalización es obligatoria",
+        "invalid": "La fecha de finalización debe ser posterior a la fecha de inicio"
+      },
+      "label": "Fecha de finalización"
+    },
+    "observation": {
+      "errors": {
+        "required": "La observación es obligatoria"
+      },
+      "label": "Observación"
+    }
+  },
+  "useItemForm": {
+    "sleep": {
+      "title": "Dormir"
+    },
+    "diaper": {
+      "title": "Pañal"
+    },
+    "eat": {
+      "title": "Comer"
+    }
+  },
+  "babyItemsList": {
+    "error": "Ocurrió un error al obtener los datos de los elementos del bebé"
+  },
+  "charts": {
+    "itemsCount": {
+      "title": "Conteo de elementos por tipo"
+    }
+  },
+  "darkModeSwitch": {
+    "label": "Seleccionar tema",
+    "light": {
+      "label": "Claro"
+    },
+    "dark": {
+      "label": "Oscuro"
+    }
+  },
+  "fabMenu": {
+    "menu": {
+      "item": {
+        "settings": {
+          "label": "Configuraciones"
+        },
+        "dashboard": {
+          "label": "Tablero"
+        },
+        "logout": {
+          "label": "Cerrar sesión"
+        }
+      }
+    }
+  },
+  "languageSelector": {
+    "label": "Idioma",
+    "english": {
+      "label": "Inglés"
+    },
+    "spanish": {
+      "label": "Español"
+    },
+    "portuguese": {
+      "label": "Portugués"
+    }
+  },
+  "confirmModal": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  "signInForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocurrió un error inesperado",
+        "api": "Correo electrónico o contraseña incorrectos"
+      },
+      "label": "Iniciar sesión"
+    },
+    "email": {
+      "errors": {
+        "required": "El correo electrónico es obligatorio",
+        "invalid": "Dirección de correo electrónico inválida"
+      },
+      "label": "Correo electrónico"
+    },
+    "password": {
+      "errors": {
+        "required": "La contraseña es obligatoria",
+        "minLength": "La contraseña debe tener al menos 6 caracteres"
+      },
+      "label": "Contraseña"
+    }
+  },
+  "signUpForm": {
+    "submit": {
+      "errors": {
+        "unknown": "Ocurrió un error inesperado",
+        "api": "Ocurrió un error inesperado al enviar el formulario, por favor revise su correo electrónico"
+      },
+      "label": "Registrarse"
+    },
+    "baby": {
+      "label": "Tu bebé"
+    },
+    "babyName": {
+      "errors": {
+        "required": "El nombre del bebé es obligatorio"
+      },
+      "label": "Nombre"
+    },
+    "babyBirthDate": {
+      "errors": {
+        "required": "La fecha de nacimiento del bebé es obligatoria",
+        "future": "La fecha de nacimiento del bebé no puede estar en el futuro"
+      },
+      "label": "Fecha de nacimiento"
+    },
+    "babyLength": {
+      "errors": {
+        "required": "La longitud del bebé es obligatoria",
+        "min": "La longitud del bebé debe ser mayor que 1",
+        "decimal": "La longitud del bebé debe ser un número entero"
+      },
+      "label": "Longitud"
+    },
+    "babyWeight": {
+      "errors": {
+        "required": "El peso del bebé es obligatorio",
+        "min": "El peso del bebé debe ser mayor que 1"
+      },
+      "label": "Peso"
+    },
+    "username": {
+      "errors": {
+        "required": "El nombre es obligatorio"
+      },
+      "label": "Tu nombre"
+    },
+    "email": {
+      "errors": {
+        "required": "El correo electrónico es obligatorio",
+        "invalid": "Dirección de correo electrónico inválida"
+      },
+      "label": "Correo electrónico"
+    },
+    "password": {
+      "errors": {
+        "required": "La contraseña es obligatoria",
+        "minLength": "La contraseña debe tener al menos 6 caracteres"
+      },
+      "label": "Contraseña"
+    }
+  },
+  "babyItemTheme": {
+    "sleep": {
+      "title": "Dormir"
+    },
+    "feed": {
+      "title": "Alimentar"
+    },
+    "diaper": {
+      "title": "Pañal"
+    }
+  },
+  "dashboardPage": {
+    "title": "Tablero",
+    "error": "Ocurrió un error al cargar los datos"
+  },
+  "formPage": {
+    "submit": {
+      "success": "Guardado exitosamente"
+    }
+  },
+  "formUpdatePage": {
+    "remove": {
+      "confirm": {
+        "title": "Eliminar elemento",
+        "description": "¿Estás seguro de que deseas eliminar este elemento?"
+      },
+      "submit": {
+        "success": "Eliminado exitosamente",
+        "error": "Ocurrió un error al eliminar el elemento"
+      }
+    },
+    "update": {
+      "submit": {
+        "success": "Guardado exitosamente"
+      }
+    },
+    "action": {
+      "delete": "Eliminar"
+    }
+  },
+  "homePage": {
+    "profileFetch": {
+      "error": "Ocurrió un error al obtener los datos del perfil del bebé"
+    },
+    "babyActions": {
+      "action": {
+        "label": "Agregar nuevo"
+      }
+    }
+  },
+  "notFoundPage": {
+    "title": "Página no encontrada",
+    "message": "La página que estás buscando podría haber sido eliminada, haber cambiado de nombre o estar temporalmente no disponible.",
+    "backToHome": "Volver a inicio"
+  },
+  "settingsPage": {
+    "title": "Configuraciones",
+    "siteSettings": {
+      "title": "Configuraciones del sitio"
+    },
+    "profileFetch": {
+      "error": "Ocurrió un error al obtener los datos del perfil del bebé"
+    },
+    "babyInformation": {
+      "title": "Información del bebé",
+      "submit": {
+        "success": "Información del bebé actualizada exitosamente"
+      }
+    }
+  },
+  "signIn": {
+    "title": "Gestor de bebés",
+    "welcome": "Bienvenido",
+    "signUpRedirect": "Si no tienes una cuenta, crea una <linkRedirect>aquí</linkRedirect>."
+  },
+  "signUn": {
+    "title": "Gestor de bebés",
+    "CreateAccountMessage": "Comienza a gestionar tu bebé",
+    "signInRedirect": "Si ya tienes una cuenta, inicia sesión <linkRedirect>aquí</linkRedirect>."
+  }
+}

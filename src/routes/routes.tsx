@@ -1,11 +1,16 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
-  Dashboard,
-  Form,
-  Home,
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
+import {
+  DashboardPage,
+  FormPage,
+  FormUpdatePage,
+  HomePage,
   NotFoundPage,
   PageLayout,
-  Settings,
+  SettingsPage,
   SignInPage,
   SignUpPage,
 } from "../views";
@@ -16,7 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <PageLayout />,
-    errorElement: <NotFoundPage />,
+    errorElement: <Navigate to="/not-found" />,
     children: [
       // protected routes
       {
@@ -25,19 +30,23 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Home />,
+            element: <HomePage />,
           },
           {
             path: "/dashboard",
-            element: <Dashboard />,
+            element: <DashboardPage />,
           },
           {
             path: "/settings",
-            element: <Settings />,
+            element: <SettingsPage />,
           },
           {
-            path: "form",
-            element: <Form />,
+            path: "/form",
+            element: <FormPage />,
+          },
+          {
+            path: "/form/:itemId",
+            element: <FormUpdatePage />,
           },
         ],
       },
@@ -55,6 +64,11 @@ const router = createBrowserRouter([
             element: <SignUpPage />,
           },
         ],
+      },
+      // not found
+      {
+        path: "/not-found",
+        element: <NotFoundPage />,
       },
     ],
   },

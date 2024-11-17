@@ -1,12 +1,32 @@
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import {
+  ApiProvider,
+  LocalizedProvider,
+  SessionProvider,
+  SnackBarProvider,
+} from "./contexts";
 import { Routes } from "./routes";
-import { SessionProvider } from "./shared";
-import "./shared/styles/App.scss";
+import { Storage } from "./services";
+import { theme } from "./utils";
 
 function App() {
   return (
-    <SessionProvider>
-      <Routes />
-    </SessionProvider>
+    <ApiProvider>
+      <SessionProvider>
+        <ThemeProvider
+          theme={theme}
+          defaultMode={(Storage.getTheme() as "dark" | "light") ?? "system"}
+        >
+          <LocalizedProvider>
+            <SnackBarProvider>
+              <CssBaseline enableColorScheme />
+              <Routes />
+            </SnackBarProvider>
+          </LocalizedProvider>
+        </ThemeProvider>
+      </SessionProvider>
+    </ApiProvider>
   );
 }
 
