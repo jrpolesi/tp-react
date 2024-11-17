@@ -243,6 +243,10 @@
       "label": "Português"
     }
   },
+  "confirmModal": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
   "signInForm": {
     "submit": {
       "errors": {
@@ -354,6 +358,10 @@
     "remove": {
       "submit": {
         "success": "Removido com sucesso"
+      },
+      "confirm": {
+        "title": "Excluir item",
+        "description": "Tem certeza de que deseja excluir este item?"
       }
     },
     "action": {

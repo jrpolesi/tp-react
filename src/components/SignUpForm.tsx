@@ -2,15 +2,15 @@ import { BoxProps, InputAdornment, Stack } from "@mui/material";
 import dayjs, { Dayjs } from "dayjs";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ApiError } from "../../errors";
-import { useHandleSubmit } from "../../hooks";
+import { ApiError } from "../errors";
+import { useHandleSubmit } from "../hooks";
 import {
   Alert,
   Box,
   ControlledDatePicker,
   ControlledTextField,
   SubmitButton,
-} from "../Shared";
+} from "./Shared";
 
 type FormFields = {
   submit: void;

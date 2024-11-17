@@ -61,8 +61,11 @@ export function FeedForm({
   const form = useForm<FormFields>({
     defaultValues: {
       ...defaultValue,
-      startDatetime: dayjs(defaultValue?.startDatetime),
-      endDatetime: dayjs(defaultValue?.endDatetime),
+      startDatetime:
+        defaultValue?.startDatetime && dayjs(defaultValue?.startDatetime),
+      endDatetime: defaultValue?.endDatetime
+        ? dayjs(defaultValue?.endDatetime)
+        : undefined,
     },
   });
   const { control, formState, reset, watch } = form;

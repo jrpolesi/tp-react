@@ -241,6 +241,10 @@
       "label": "Portuguese"
     }
   },
+  "confirmModal": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
   "signInForm": {
     "submit": {
       "errors": {
@@ -352,6 +356,10 @@
     "remove": {
       "submit": {
         "success": "Removed successfully"
+      },
+      "confirm": {
+        "title": "Delete item",
+        "description": "Are you sure you want to delete this item?"
       }
     },
     "action": {

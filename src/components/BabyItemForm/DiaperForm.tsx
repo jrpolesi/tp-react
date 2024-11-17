@@ -51,7 +51,8 @@ export function DiaperForm({
     defaultValues: {
       observation: defaultValue?.observation,
       diaperStatus: defaultValue?.diaperStatus,
-      startDatetime: dayjs(defaultValue?.startDatetime),
+      startDatetime:
+        defaultValue?.startDatetime && dayjs(defaultValue?.startDatetime),
     },
   });
   const { control, formState, reset } = form;

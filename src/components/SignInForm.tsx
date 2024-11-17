@@ -1,9 +1,9 @@
 import { BoxProps, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { ApiError } from "../../errors";
-import { useHandleSubmit } from "../../hooks";
-import { Alert, Box, ControlledTextField, SubmitButton } from "../Shared";
+import { ApiError } from "../errors";
+import { useHandleSubmit } from "../hooks";
+import { Alert, Box, ControlledTextField, SubmitButton } from "./Shared";
 
 type FormFields = {
   submit: void;

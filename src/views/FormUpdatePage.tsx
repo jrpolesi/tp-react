@@ -11,7 +11,7 @@ import {
   useItemForm,
 } from "../components";
 import { useSnackBarContext } from "../contexts";
-import { useItemApi, useItemData } from "../hooks";
+import { useConfirmModal, useItemApi, useItemData } from "../hooks";
 
 export function FormUpdatePage() {
   const { t } = useTranslation();
@@ -55,6 +55,15 @@ export function FormUpdatePage() {
     navigate("/");
   }
 
+  const { confirmModal, open: openModal } = useConfirmModal({
+    title: t("formUpdatePage.remove.confirm.title", "Delete item"),
+    description: t(
+      "formUpdatePage.remove.confirm.description",
+      "Are you sure you want to delete this item?"
+    ),
+    onConfirm: () => handleDelete(itemId ?? ""),
+  });
+
   if (!itemId) {
     throw new Error("Item ID is required in this route");
   }
@@ -64,37 +73,43 @@ export function FormUpdatePage() {
   }
 
   return (
-    <PageTemplate
-      withAppBar
-      title={data?.type ? title : "  "}
-      action={
-        <LoadingButton
-          onClick={() => handleDelete(itemId)}
-          loading={isDeleteLoading}
-          variant="contained"
-          color="error"
-          size="small"
-          sx={{
-            fontSize: "0.75rem",
-            minWidth: "0",
-          }}
-          title={t("formUpdatePage.action.delete", "Delete")}
-        >
-          <DeleteIcon sx={{ fontSize: "1.5rem" }} />
-        </LoadingButton>
-      }
-    >
-      {!data && isLoading && <CentralizedSpinner sx={{ minHeight: "14rem" }} />}
-      {data && (
-        <BabyItemForm
-          formType={data.type}
-          sx={{
-            margin: "2rem auto 0",
-          }}
-          defaultValue={data}
-          onSubmit={(value) => onSubmit(itemId, value)}
-        />
-      )}
-    </PageTemplate>
+    <>
+      <PageTemplate
+        withAppBar
+        title={data?.type ? title : "  "}
+        action={
+          <LoadingButton
+            onClick={openModal}
+            loading={isDeleteLoading}
+            variant="contained"
+            color="error"
+            size="small"
+            sx={{
+              fontSize: "0.75rem",
+              minWidth: "0",
+            }}
+            title={t("formUpdatePage.action.delete", "Delete")}
+          >
+            <DeleteIcon sx={{ fontSize: "1.5rem" }} />
+          </LoadingButton>
+        }
+      >
+        {!data && isLoading && (
+          <CentralizedSpinner sx={{ minHeight: "14rem" }} />
+        )}
+        {data && (
+          <BabyItemForm
+            formType={data.type}
+            sx={{
+              margin: "2rem auto 0",
+            }}
+            defaultValue={data}
+            onSubmit={(value) => onSubmit(itemId, value)}
+          />
+        )}
+      </PageTemplate>
+
+      {confirmModal}
+    </>
   );
 }

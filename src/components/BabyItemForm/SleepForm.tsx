@@ -44,8 +44,10 @@ export function SleepForm({
   const form = useForm<FormFields>({
     defaultValues: {
       ...defaultValue,
-      startDatetime: dayjs(defaultValue?.startDatetime),
-      endDatetime: dayjs(defaultValue?.endDatetime),
+      startDatetime:
+        defaultValue?.startDatetime && dayjs(defaultValue?.startDatetime),
+      endDatetime:
+        defaultValue?.endDatetime && dayjs(defaultValue?.endDatetime),
     },
   });
   const { control, formState, reset, watch } = form;
