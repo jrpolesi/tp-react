@@ -38,7 +38,13 @@ export function NotFoundPage() {
             )}
           </Typography>
 
-          <Button component={Link} to="/" variant="contained" size="large">
+          <Button
+            component={Link}
+            to="/"
+            variant="contained"
+            size="large"
+            sx={{ textAlign: "center" }}
+          >
             {t("notFoundPage.backToHome", "Back to home")}
           </Button>
         </Stack>

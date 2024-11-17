@@ -4,6 +4,8 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -25,6 +27,9 @@ export function ConfirmModal({
   description,
 }: ConfirmModalProps) {
   const { t } = useTranslation();
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -50,12 +55,15 @@ export function ConfirmModal({
       </DialogContent>
 
       <DialogActions>
-        <Button onClick={onCancel}>{t("confirmModal.cancel", "Cancel")}</Button>
+        <Button onClick={onCancel} size={isMobile ? "small" : "medium"}>
+          {t("confirmModal.cancel", "Cancel")}
+        </Button>
         <LoadingButton
           onClick={handleConfirm}
           loading={isLoading}
           variant="contained"
           autoFocus
+          size={isMobile ? "small" : "medium"}
         >
           {t("confirmModal.confirm", "Confirm")}
         </LoadingButton>
