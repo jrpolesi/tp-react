@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import {
   Action,
+  Alert,
   BabyActions,
   BabyInfo,
   BabyItemsList,
@@ -12,7 +13,8 @@ import {
 import { useProfileData, useThemeByItemType } from "../hooks";
 
 export function HomePage() {
-  const { data, isLoading } = useProfileData();
+  const { t } = useTranslation();
+  const { data, error, isLoading } = useProfileData();
 
   const actions = useBabyActions();
 
@@ -33,6 +35,24 @@ export function HomePage() {
             },
           }}
         >
+          {!!error && (
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "stretch",
+                minHeight: { xs: "9.5rem", sm: "14rem" },
+              }}
+            >
+              <Alert severity="error" sx={{ width: "100%" }}>
+                {t(
+                  "homePage.profileFetch.error",
+                  "An error occurred while fetching baby profile data"
+                )}
+              </Alert>
+            </Box>
+          )}
+
           {!data && isLoading && (
             <CentralizedSpinner
               sx={{
@@ -40,6 +60,7 @@ export function HomePage() {
               }}
             />
           )}
+
           {data && <BabyInfo profile={data} />}
         </Box>
       </Container>

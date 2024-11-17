@@ -2,6 +2,7 @@ import { BoxProps, Stack } from "@mui/material";
 import { PropsWithChildren } from "react";
 import { useTranslation } from "react-i18next";
 import {
+  Alert,
   BabyForm,
   Box,
   CentralizedSpinner,
@@ -18,7 +19,7 @@ export function SettingsPage() {
 
   const { open, snackBar } = useSnackBar();
 
-  const { data, isLoading } = useProfileData();
+  const { data, error, isLoading } = useProfileData();
 
   return (
     <>
@@ -36,9 +37,19 @@ export function SettingsPage() {
             <DarkModeSwitch />
           </SettingsSection>
 
+          {!!error && (
+            <Alert severity="error" sx={{ marginTop: "1rem" }}>
+              {t(
+                "settingsPage.profileFetch.error",
+                "An error occurred while fetching baby profile data"
+              )}
+            </Alert>
+          )}
+
           {!data && isLoading && (
             <CentralizedSpinner sx={{ marginTop: "3rem" }} />
           )}
+
           {data && (
             <SettingsSection
               title={t(
