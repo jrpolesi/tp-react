@@ -343,12 +343,32 @@
       "success": "Saved successfully"
     }
   },
+  "formUpdatePage": {
+    "update": {
+      "submit": {
+        "success": "Saved successfully"
+      }
+    },
+    "remove": {
+      "submit": {
+        "success": "Removed successfully"
+      }
+    },
+    "action": {
+      "delete": "Delete"
+    }
+  },
   "homePage": {
     "babyActions": {
       "action": {
         "label": "Add new"
       }
     }
+  },
+  "notFoundPage": {
+    "title": "Page not found",
+    "message": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "backToHome": "Back to home"
   },
   "settingsPage": {
     "title": "Settings",

@@ -345,12 +345,32 @@
       "success": "Salvo com sucesso"
     }
   },
+  "formUpdatePage": {
+    "update": {
+      "submit": {
+        "success": "Salvo com sucesso"
+      }
+    },
+    "remove": {
+      "submit": {
+        "success": "Removido com sucesso"
+      }
+    },
+    "action": {
+      "delete": "Excluir"
+    }
+  },
   "homePage": {
     "babyActions": {
       "action": {
         "label": "Adicionar novo"
       }
     }
+  },
+  "notFoundPage": {
+    "title": "Página não encontrada",
+    "message": "A página que você está procurando pode ter sido removida, teve seu nome alterado ou está temporariamente indisponível.",
+    "backToHome": "Voltar para a página inicial"
   },
   "settingsPage": {
     "title": "Configurações",
