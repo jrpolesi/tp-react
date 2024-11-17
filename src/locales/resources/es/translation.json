@@ -210,6 +210,11 @@
   "babyItemsList": {
     "error": "Ocurrió un error al obtener los datos de los elementos del bebé"
   },
+  "charts": {
+    "itemsCount": {
+      "title": "Conteo de elementos por tipo"
+    }
+  },
   "darkModeSwitch": {
     "label": "Seleccionar tema",
     "light": {
@@ -345,7 +350,8 @@
     }
   },
   "dashboardPage": {
-    "title": "Tablero"
+    "title": "Tablero",
+    "error": "Ocurrió un error al cargar los datos"
   },
   "formPage": {
     "submit": {

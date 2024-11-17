@@ -3,6 +3,7 @@ export * from "./BabyForm";
 export * from "./BabyInfo";
 export * from "./BabyItemForm";
 export * from "./BabyItemsList";
+export * from "./Charts";
 export * from "./DarkModeSwitch";
 export * from "./FabMenu";
 export * from "./LanguageSelector";

@@ -210,6 +210,11 @@
   "babyItemsList": {
     "error": "Ocorreu um erro ao buscar os dados dos itens do bebê"
   },
+  "charts": {
+    "itemsCount": {
+      "title": "Contagem de itens por tipo"
+    }
+  },
   "darkModeSwitch": {
     "label": "Selecionar tema",
     "light": {
@@ -345,7 +350,8 @@
     }
   },
   "dashboardPage": {
-    "title": "Dashboard"
+    "title": "Painel",
+    "error": "Ocorreu um erro ao carregar os dados"
   },
   "formPage": {
     "submit": {

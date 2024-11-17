@@ -1,5 +1,5 @@
 import { ApiError } from "../../errors";
-import { Item } from "../../types";
+import { Item, ItemCount } from "../../types";
 import { Client } from "./Api";
 
 type ItemIntent = Omit<Item, "id" | "active" | "createdAt">;
@@ -129,6 +129,18 @@ export class ItemApi {
     }
 
     return res;
+  }
+
+  async getItemsCountByType(userId: string) {
+    const res = await this.client.rpc("get_items_count_by_type", {
+      user_id_input: userId,
+    });
+
+    if (res.error) {
+      throw new ApiError(res.error.message, res.status ?? 0, "items");
+    }
+
+    return res.data as ItemCount[];
   }
 
   subscribeToItems(callback: () => void) {
