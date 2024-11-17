@@ -3,7 +3,6 @@ import { Profile } from "../../types";
 export const STORAGE_KEYS = {
   userId: "@baby.user_id",
   profile: "@baby.profile",
-  language: "@baby.language",
   theme: "@baby.theme",
 } as const;
 
@@ -61,14 +60,6 @@ export class Storage {
 
   public static removeProfile() {
     localStorage.removeItem(STORAGE_KEYS.profile);
-  }
-
-  public static getLanguage() {
-    return this.getItem<string>(STORAGE_KEYS.language);
-  }
-
-  public static setLanguage(language: string) {
-    this.setItem(STORAGE_KEYS.language, language);
   }
 
   public static getTheme() {
