@@ -1,5 +1,5 @@
 import { CssBaseline } from "@mui/material";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import {
   ApiProvider,
   LocalizedProvider,
@@ -8,35 +8,7 @@ import {
 } from "./contexts";
 import { Routes } from "./routes";
 import { Storage } from "./services";
-
-let theme = createTheme({});
-
-theme = createTheme({
-  colorSchemes: {
-    dark: true,
-  },
-  palette: {
-    // mode: "dark",
-    salmon: theme.palette.augmentColor({
-      color: {
-        main: "#FF5733",
-      },
-      name: "salmon",
-    }),
-    purple: theme.palette.augmentColor({
-      color: {
-        main: "#8533ff",
-      },
-      name: "blue",
-    }),
-    green: theme.palette.augmentColor({
-      color: {
-        main: "#00a62f",
-      },
-      name: "green",
-    }),
-  } as any,
-});
+import { theme } from "./utils";
 
 function App() {
   return (

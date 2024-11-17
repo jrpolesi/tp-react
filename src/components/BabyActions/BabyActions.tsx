@@ -43,7 +43,7 @@ export function BabyActions({ actions, sx }: BabyActionsProps) {
             action={action}
             sx={{
               minWidth: "10rem",
-              backgroundColor: "background.default",
+              backgroundColor: "background.paper",
             }}
           />
         );
