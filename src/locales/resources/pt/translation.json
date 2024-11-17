@@ -326,6 +326,17 @@
       "label": "Senha"
     }
   },
+  "babyItemTheme": {
+    "sleep": {
+      "title": "Sono"
+    },
+    "feed": {
+      "title": "Alimentação"
+    },
+    "diaper": {
+      "title": "Fralda"
+    }
+  },
   "dashboardPage": {
     "title": "Dashboard"
   },
@@ -336,16 +347,7 @@
   },
   "homePage": {
     "babyActions": {
-      "sleep": {
-        "title": "Sono",
-        "label": "Adicionar novo"
-      },
-      "feed": {
-        "title": "Alimentação",
-        "label": "Adicionar novo"
-      },
-      "diaper": {
-        "title": "Fralda",
+      "action": {
         "label": "Adicionar novo"
       }
     }

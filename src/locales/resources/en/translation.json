@@ -324,6 +324,17 @@
       "label": "Password"
     }
   },
+  "babyItemTheme": {
+    "sleep": {
+      "title": "Sleep"
+    },
+    "feed": {
+      "title": "Feed"
+    },
+    "diaper": {
+      "title": "Diaper"
+    }
+  },
   "dashboardPage": {
     "title": "Dashboard"
   },
@@ -334,16 +345,7 @@
   },
   "homePage": {
     "babyActions": {
-      "sleep": {
-        "title": "Sleep",
-        "label": "Add new"
-      },
-      "feed": {
-        "title": "Feed",
-        "label": "Add new"
-      },
-      "diaper": {
-        "title": "Diaper",
+      "action": {
         "label": "Add new"
       }
     }
