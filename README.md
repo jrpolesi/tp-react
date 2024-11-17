@@ -11,7 +11,7 @@ Para acessar o deploy do projeto [acesse aqui](https://baby-manager.netlify.app/
 Para rodar o projeto localmente:
 
 - Instale as dependencias com o comando `npm install`
-- Crie uma cópia do arquivo `.env.example` e adicione os valores necessários
+- Crie uma cópia do arquivo `.env.example` para `.env` e adicione os valores necessários
 - Rode o projeto localmente com o comando `npm run dev`
 
 ## Outros comandos
